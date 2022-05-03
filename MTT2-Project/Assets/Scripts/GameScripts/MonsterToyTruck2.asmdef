@@ -1,0 +1,18 @@
+{
+    "name": "MonsterToyTruck2",
+    "rootNamespace": "",
+    "references": [
+        "Unity.InputSystem",
+        "Nebby.CSharpUtils",
+        "Nebby.UnityUtils"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
