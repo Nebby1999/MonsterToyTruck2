@@ -4,7 +4,7 @@
     "references": [
         "Unity.InputSystem",
         "Nebby.CSharpUtils",
-        "Nebby.UnityUtils"
+        "Nebby.UnityUtils.Runtime"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

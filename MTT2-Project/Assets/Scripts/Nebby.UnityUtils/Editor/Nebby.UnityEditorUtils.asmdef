@@ -1,5 +1,5 @@
 {
-    "name": "Nebby.UnityEditorUtils",
+    "name": "Nebby.UnityUtils.Editor",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [

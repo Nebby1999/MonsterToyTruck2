@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-namespace Nebby.UnityUtils.Serialization
+namespace Nebby.UnityUtils
 {
     [Serializable]
     public struct SerializableSystemType
