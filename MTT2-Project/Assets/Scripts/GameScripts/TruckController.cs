@@ -52,14 +52,10 @@ namespace MTT2
             OnTruckDefChanged();
         }
 
-        public void Update()
-        {
-            isRunning = fuel >= 0;
-        }
-
         public void FixedUpdate()
         {
-            if(isRunning)
+            FuelFixedUpdate();
+            if (isRunning)
             {
                 MotorFixedUpdate();
             }
@@ -90,6 +86,16 @@ namespace MTT2
             {
                 wheels[i].SetMotorSpeed(_currentSpeed);
             }
+        }
+
+        private void FuelFixedUpdate()
+        {
+            var absDrive = Mathf.Abs(driveValue);
+            var driveCoefficient = absDrive > 0 ? fuelMultiplierCoefficient * absDrive : 1;
+
+            var finalCoefficient = driveCoefficient;
+            fuel -= baseFuelConsumptionRate * finalCoefficient * Time.fixedDeltaTime;
+            isRunning = fuel > 0;
         }
     }
 }

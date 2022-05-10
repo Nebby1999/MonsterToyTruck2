@@ -13,7 +13,12 @@ MonoBehaviour:
   m_Name: BaseTruck
   m_EditorClassIdentifier: 
   chasisSprite: {fileID: 0}
-  maxFuel: 0
-  baseFuelConsumptionRate: 0
-  baseSpeed: 0
-  fuelMultiplierCoefficient: 0
+  chasisMaterial: {fileID: 6200000, guid: fd9d0443fa03ba647b6678314c221c0d, type: 2}
+  mass: 1
+  maxFuel: 100
+  baseFuelConsumptionRate: 1
+  baseSpeed: 2000
+  fuelMultiplierCoefficient: 1.1
+  dampingRatio: 0.1
+  frequency: 5
+  angle: 90
