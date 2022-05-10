@@ -1,12 +1,10 @@
 {
-    "name": "MonsterToyTruck2",
+    "name": "Nebby.UnityUtils.Editor",
     "rootNamespace": "",
-    "references": [
-        "Unity.InputSystem",
-        "Nebby.CSharpUtils",
-        "Nebby.UnityUtils.Runtime"
+    "references": [],
+    "includePlatforms": [
+        "Editor"
     ],
-    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

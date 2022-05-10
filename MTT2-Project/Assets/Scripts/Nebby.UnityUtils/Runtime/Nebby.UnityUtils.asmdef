@@ -1,5 +1,5 @@
 {
-    "name": "Nebby.UnityUtils",
+    "name": "Nebby.UnityUtils.Runtime",
     "rootNamespace": "",
     "references": [],
     "includePlatforms": [],
