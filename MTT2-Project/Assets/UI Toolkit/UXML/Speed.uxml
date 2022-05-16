@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Background" style="width: 100%; height: 100%; align-items: center; justify-content: space-around; flex-direction: column;">
+        <ui:VisualElement style="flex-direction: row; align-items: center; justify-content: space-around;">
+            <ui:VisualElement name="Meter" style="background-image: url(&apos;/Assets/IMG/Speedmeter_Bar.png&apos;); width: 183px; height: 58px; -unity-background-scale-mode: scale-to-fit;" />
+            <ui:Label text="MPH" display-tooltip-when-elided="true" name="MPH" style="-unity-font: url(&apos;/Assets/Font/DS-DIGI.TTF&apos;); -unity-font-definition: none; width: 86px; font-size: 55.45px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; color: rgba(255, 255, 255, 255);" />
+        </ui:VisualElement>
+        <ui:Label text="88" display-tooltip-when-elided="true" name="SpeedBase" style="font-size: 300px; -unity-font-definition: none; -unity-font: url(&apos;/Assets/Font/DS-DIGI.TTF&apos;); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; width: 293px; height: 244px; color: rgba(255, 255, 255, 255);" />
+        <ui:Label display-tooltip-when-elided="true" name="SpeedCurrent" style="font-size: 300px; -unity-font-definition: none; -unity-font: url(&apos;/Assets/Font/DS-DIGI.TTF&apos;); padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; width: 293px; height: 244px; display: none;" />
+    </ui:VisualElement>
+</ui:UXML>
