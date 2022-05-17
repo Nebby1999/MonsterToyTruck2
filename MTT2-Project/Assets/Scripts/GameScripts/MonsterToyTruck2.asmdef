@@ -4,7 +4,8 @@
     "references": [
         "Unity.InputSystem",
         "Nebby.CSharpUtils",
-        "Nebby.UnityUtils.Runtime"
+        "Nebby.UnityUtils.Runtime",
+        "Cinemachine"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

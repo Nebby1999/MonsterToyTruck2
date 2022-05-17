@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheelSprite: {fileID: 0}
   physicsMaterial: {fileID: 6200000, guid: 5a95491dd2ee18f45b3fe421b90e9642, type: 2}
+  breakStrength: 0.5
+  maxAngularVelocity: 1000
   wheelMass: 1
   linearDrag: 0
   angularDrag: 0.05

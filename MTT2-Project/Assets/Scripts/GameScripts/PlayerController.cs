@@ -35,6 +35,8 @@ namespace MTT2
             TruckController = obj.GetComponent<TruckController>();
             TruckController.TruckDef = chosenTruck;
             TruckController.SetWheelDef(chosenWheels);
+
+            CameraController.Instance.SetFollow(obj.transform);
         }
 
         public void OnMove(InputAction.CallbackContext context)
