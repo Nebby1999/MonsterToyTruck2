@@ -7,6 +7,7 @@ namespace MTT2
 {
     public class PlayerController : SingletonBehaviour<PlayerController>
     {
+        public static Action<PlayerController> OnPlayerStart;
         public TruckDef chosenTruck;
         public WheelDef chosenWheels;
         public GameObject truckPrefab;
@@ -26,7 +27,7 @@ namespace MTT2
             if (SceneController.Instance)
                 SpawnPlayerTruck(SceneController.Instance.spawnPoint);
             else
-                throw new InvalidOperationException($"Cannot spawn the player as the current scene does not have a SceneController!");
+                throw new InvalidOperationException($"Cannot spawn the player as the current scene does not have a SceneController! Use SpawnPlayerTruck(Transform spawnPosition) instead.");
         }
 
         public void SpawnPlayerTruck(Transform spawnPosition)
