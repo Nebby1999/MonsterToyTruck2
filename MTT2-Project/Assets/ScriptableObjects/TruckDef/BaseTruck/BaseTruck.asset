@@ -17,8 +17,9 @@ MonoBehaviour:
   mass: 1
   maxFuel: 100
   baseFuelConsumptionRate: 1
-  baseSpeed: 2000
+  baseSpeed: 100
   fuelMultiplierCoefficient: 1.1
-  dampingRatio: 0.1
-  frequency: 5
+  manouverability: 100
+  dampingRatio: 0.9
+  frequency: 10
   angle: 90

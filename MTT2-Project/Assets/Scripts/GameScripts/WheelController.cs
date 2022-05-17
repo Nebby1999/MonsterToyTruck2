@@ -24,14 +24,19 @@ namespace MTT2
         [SerializeField]
         private WheelDef _wheelDef;
         public SpriteRenderer spriteRenderer;
+        public float maxTorqueSpeed;
+        public Rigidbody2D RigidBody => _rigidBody;
         private Rigidbody2D _rigidBody;
         private Collider2D _collider2D;
+        private WheelJoint2D _wheelJoint;
 
         private void Awake()
         {
             _rigidBody = GetComponent<Rigidbody2D>();
             _collider2D = GetComponent<Collider2D>();
+            _wheelJoint = GetComponent<WheelJoint2D>();
         }
+
         private void Start()
         {
             OnWheelDefChanged();
@@ -42,6 +47,8 @@ namespace MTT2
             if (!_wheelDef)
                 return;
 
+            maxTorqueSpeed = _wheelDef.maxTorqueSpeed;
+
             if(spriteRenderer)
                 spriteRenderer.sprite = _wheelDef.wheelSprite;
 
@@ -50,6 +57,12 @@ namespace MTT2
             _rigidBody.drag = _wheelDef.linearDrag;
 
             _rigidBody.sharedMaterial = _wheelDef.physicsMaterial;
+        }
+
+        private void FixedUpdate()
+        {
+            if(RigidBody.angularVelocity < -maxTorqueSpeed) { RigidBody.angularVelocity = -maxTorqueSpeed; }
+            if(RigidBody.angularVelocity > maxTorqueSpeed) { RigidBody.angularVelocity = maxTorqueSpeed; }
         }
     }
 }

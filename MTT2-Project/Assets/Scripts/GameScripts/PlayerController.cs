@@ -13,6 +13,7 @@ namespace MTT2
 
         public float drive;
         public float steer;
+        public bool breaking;
 
         public TruckController TruckController { get; private set; }
 
@@ -33,6 +34,7 @@ namespace MTT2
             var obj = Instantiate(truckPrefab, spawnPosition.position, Quaternion.Euler(Vector3.zero));
             TruckController = obj.GetComponent<TruckController>();
             TruckController.TruckDef = chosenTruck;
+            TruckController.SetWheelDef(chosenWheels);
         }
 
         public void OnMove(InputAction.CallbackContext context)
@@ -42,7 +44,12 @@ namespace MTT2
             steer = input.x;
         }
 
-        public void FixedUpdate()
+        public void OnBreak(InputAction.CallbackContext context)
+        {
+            breaking = context.ReadValueAsButton();
+        }
+
+        private void FixedUpdate()
         {
             TruckControllerUpdate();
         }
@@ -51,6 +58,7 @@ namespace MTT2
         {
             TruckController.driveValue = drive;
             TruckController.steerValue = steer;
+            TruckController.breaking = breaking;
         }
     }
 }
