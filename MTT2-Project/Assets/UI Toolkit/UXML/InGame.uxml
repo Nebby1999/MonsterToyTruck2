@@ -10,7 +10,7 @@
             <ui:Instance template="Speed" name="Speed" style="height: 100%; width: 100%;" />
         </ui:VisualElement>
     </ui:VisualElement>
-    <ui:VisualElement name="Footer" style="position: absolute; width: 100%; height: 20%; left: 0; bottom: 0; right: 1px; flex-direction: row; align-items: center; justify-content: space-around;">
+    <ui:VisualElement name="Footer" style="position: absolute; width: 100%; height: 10%; left: 0; bottom: 0; right: 1px; flex-direction: row; align-items: center; justify-content: space-around;">
         <ui:VisualElement name="Line-Container" style="width: 80%; height: 20%;">
             <ui:Instance template="LevelPosition" name="LevelPosition" />
         </ui:VisualElement>
