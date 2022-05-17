@@ -9,38 +9,48 @@ namespace Nebby.UnityUtils
     [Serializable]
     public struct SerializableSystemType
     {
+
+        public class RequiredBaseTypeAttribute : Attribute
+        {
+            public Type requiredType;
+            public RequiredBaseTypeAttribute(Type type)
+            {
+                requiredType = type;
+            }
+        }
+
         public SerializableSystemType(string typeName)
         {
-            this._typeName = "";
-            this._typeName = typeName;
+            this._assemblyQualifiedName = "";
+            this._assemblyQualifiedName = typeName;
         }
         public SerializableSystemType(Type type)
         {
-            this._typeName = "";
+            this._assemblyQualifiedName = "";
             this.Type = type;
         }
 
-        public string TypeName { get => _typeName; set => Type = Type.GetType(value); }
+        public string TypeName { get => _assemblyQualifiedName; set => Type = Type.GetType(value); }
 
         public Type Type
         {
             get
             {
-                if (_typeName == null)
+                if (_assemblyQualifiedName == null)
                     return null;
 
-                Type type = Type.GetType(_typeName);
+                Type type = Type.GetType(_assemblyQualifiedName);
                 if (!(type != null))
                     return null;
                 return type;
             }
             set
             {
-                _typeName = ((value != null)) ? value.AssemblyQualifiedName : ""; 
+                _assemblyQualifiedName = ((value != null)) ? value.AssemblyQualifiedName : ""; 
             }
         }
 
         [SerializeField]
-        private string _typeName;
+        private string _assemblyQualifiedName;
     }
 }
