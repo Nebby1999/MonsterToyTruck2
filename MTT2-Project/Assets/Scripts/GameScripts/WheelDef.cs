@@ -10,7 +10,7 @@ namespace MTT2
 
         [Range(0f, 1f)]
         public float breakStrength;
-        public float maxTorqueSpeed;
+        public float maxAngularVelocity;
 
         [Header("Rigidbody Settings")]
         public float wheelMass;
