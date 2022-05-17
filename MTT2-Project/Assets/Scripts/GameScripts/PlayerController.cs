@@ -21,6 +21,7 @@ namespace MTT2
         public void Start()
         {
             SpawnPlayerTruck();
+            OnPlayerStart?.Invoke(this);
         }
         public void SpawnPlayerTruck()
         {
