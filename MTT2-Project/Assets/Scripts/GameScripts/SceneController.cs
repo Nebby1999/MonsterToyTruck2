@@ -7,5 +7,6 @@ namespace MTT2
     public class SceneController : SingletonBehaviour<SceneController>
     {
         public Transform spawnPoint;
+        public Transform finishLine;
     }
 }

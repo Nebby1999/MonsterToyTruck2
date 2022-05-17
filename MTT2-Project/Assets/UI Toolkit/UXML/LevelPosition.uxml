@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="/Assets/UI Toolkit/USS/Silder.uss" />
+    <ui:VisualElement name="Background" style="width: 100%; height: 100%; flex-direction: row; align-items: center; justify-content: flex-start;">
+        <ui:Slider picking-mode="Ignore" value="42" high-value="100" name="Slider" class="slider" />
+    </ui:VisualElement>
+</ui:UXML>
