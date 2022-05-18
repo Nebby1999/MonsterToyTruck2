@@ -29,6 +29,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdfc7730485cec444babcbc2c46545db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chosenTruck: {fileID: 11400000, guid: 43232b8428d6a834a99b193bbb3eecef, type: 2}
-  chosenWheels: {fileID: 11400000, guid: acefefb15c4ad5a4882d22ec61437c8d, type: 2}
+  playerTruck: {fileID: 11400000, guid: 43232b8428d6a834a99b193bbb3eecef, type: 2}
+  playerWheels: {fileID: 11400000, guid: acefefb15c4ad5a4882d22ec61437c8d, type: 2}
   truckPrefab: {fileID: 3319958538035206442, guid: f00b01982269c184a9d62597a7ea5f6b, type: 3}
   drive: 0
   steer: 0

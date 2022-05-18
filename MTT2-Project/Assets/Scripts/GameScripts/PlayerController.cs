@@ -8,10 +8,11 @@ namespace MTT2
     public class PlayerController : SingletonBehaviour<PlayerController>
     {
         public static Action<PlayerController> OnPlayerStart;
-        public TruckDef chosenTruck;
-        public WheelDef chosenWheels;
+        public TruckDef playerTruck;
+        public WheelDef playerWheels;
         public GameObject truckPrefab;
 
+        [Header("Control Data")]
         public float drive;
         public float steer;
         public bool breaking;
@@ -35,8 +36,8 @@ namespace MTT2
         {
             var obj = Instantiate(truckPrefab, spawnPosition.position, Quaternion.Euler(Vector3.zero));
             TruckController = obj.GetComponent<TruckController>();
-            TruckController.TruckDef = chosenTruck;
-            TruckController.SetWheelDef(chosenWheels);
+            TruckController.TruckDef = playerTruck;
+            TruckController.SetWheelDef(playerWheels);
 
             CameraController.Instance.SetFollow(obj.transform);
         }

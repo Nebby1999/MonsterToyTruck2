@@ -28,9 +28,9 @@ namespace MTT2
         }
         [SerializeField]
         private TruckDef _truckDef;
+
         [SerializeField]
         private GameObject wheelPrefab;
-
         public List<WheelController> wheels = new List<WheelController>();
         public SpriteRenderer spriteRenderer;
         public float driveValue;
@@ -46,12 +46,13 @@ namespace MTT2
         public float manouverability;
 
         private bool _isRunning;
-        private Rigidbody2D _rigidBody;
-        private ChildLocator _childLocator;
+        public Rigidbody2D RigidBody2d { get; private set; }
+        public ChildLocator ChildLocator { get; private set; }
+
         private void Awake()
         {
-            _rigidBody = GetComponent<Rigidbody2D>();
-            _childLocator = GetComponent<ChildLocator>();
+            RigidBody2d = GetComponent<Rigidbody2D>();
+            ChildLocator = GetComponent<ChildLocator>();
             SpawnWheels();
         }
         private void Start()
@@ -66,7 +67,7 @@ namespace MTT2
             {
                 MotorFixedUpdate();
             }
-            _rigidBody.AddTorque(-steerValue * manouverability * Time.fixedDeltaTime);
+            RigidBody2d.AddTorque(-steerValue * manouverability * Time.fixedDeltaTime);
         }
 
         public void SetWheelDef(WheelDef wheelDef)
@@ -79,12 +80,12 @@ namespace MTT2
 
         private void SpawnWheels()
         {
-            var wheelTransforms = new Transform[] {_childLocator.FindChild("FrontWheel"), _childLocator.FindChild("BackWheel")};
+            var wheelTransforms = new Transform[] {ChildLocator.FindChild("FrontWheel"), ChildLocator.FindChild("BackWheel")};
             for(int i = 0; i < wheelTransforms.Length; i++)
             {
                 var wheelControllerInstance = Instantiate(wheelPrefab, wheelTransforms[i], false).GetComponent<WheelController>();
                 var wheelJoint = wheelControllerInstance.GetComponent<WheelJoint2D>();
-                wheelJoint.connectedBody = _rigidBody;
+                wheelJoint.connectedBody = RigidBody2d;
                 wheelJoint.connectedAnchor = wheelTransforms[i].localPosition;
                 wheels.Add(wheelControllerInstance);
             }
@@ -98,14 +99,14 @@ namespace MTT2
             if (spriteRenderer)
                 spriteRenderer.sprite = _truckDef.chasisSprite;
 
-            _rigidBody.mass = _truckDef.mass;
-            _rigidBody.sharedMaterial = _truckDef.chasisMaterial;
+            RigidBody2d.mass = _truckDef.mass;
+            RigidBody2d.sharedMaterial = _truckDef.chasisMaterial;
 
-            fuel = _truckDef.maxFuel;
+            fuel = _truckDef.maxFuelBase;
             baseFuelConsumptionRate = _truckDef.baseFuelConsumptionRate;
 
             baseSpeed = _truckDef.baseSpeed;
-            fuelMultiplierCoefficient = _truckDef.fuelMultiplierCoefficient;
+            fuelMultiplierCoefficient = _truckDef.fuelDrivingCoefficient;
 
             manouverability = _truckDef.manouverability;
 

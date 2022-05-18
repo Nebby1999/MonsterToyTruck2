@@ -2,7 +2,7 @@
 using UnityEngine;
 using Nebby.UnityUtils;
 
-namespace MTT2.Addon
+namespace MTT2.Addons
 {
     [CreateAssetMenu(menuName = "MonsterToyTruck2/AddonDef")]
     public class AddonDef : ScriptableObject
