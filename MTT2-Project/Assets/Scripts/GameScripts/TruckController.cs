@@ -5,6 +5,7 @@ using Nebby.CSharpUtils;
 using Nebby.UnityUtils;
 using System;
 using UnityEngine.InputSystem;
+using MTT2.Addons;
 
 namespace MTT2
 {
@@ -49,10 +50,13 @@ namespace MTT2
         public Rigidbody2D RigidBody2d { get; private set; }
         public ChildLocator ChildLocator { get; private set; }
 
+        public AddonManager AddonManager { get; private set; }
+
         private void Awake()
         {
             RigidBody2d = GetComponent<Rigidbody2D>();
             ChildLocator = GetComponent<ChildLocator>();
+            AddonManager = GetComponent<AddonManager>();
             SpawnWheels();
         }
         private void Start()

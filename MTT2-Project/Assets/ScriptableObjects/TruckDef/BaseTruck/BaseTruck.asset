@@ -15,10 +15,10 @@ MonoBehaviour:
   chasisSprite: {fileID: 0}
   chasisMaterial: {fileID: 6200000, guid: fd9d0443fa03ba647b6678314c221c0d, type: 2}
   mass: 1
-  maxFuel: 100
+  maxFuelBase: 100
   baseFuelConsumptionRate: 1
   baseSpeed: 200
-  fuelMultiplierCoefficient: 1.1
+  fuelDrivingCoefficient: 1
   manouverability: 1100
   dampingRatio: 0.9
   frequency: 10

@@ -1,4 +1,5 @@
-﻿using Nebby.UnityUtils;
+﻿using MTT2.Addons;
+using Nebby.UnityUtils;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,17 +9,15 @@ namespace MTT2
     public class PlayerController : SingletonBehaviour<PlayerController>
     {
         public static Action<PlayerController> OnPlayerStart;
-        public TruckDef playerTruck;
-        public WheelDef playerWheels;
+        public PlayerPreferenceData playerPreferenceData;
         public GameObject truckPrefab;
 
-        [Header("Control Data")]
-        public float drive;
-        public float steer;
-        public bool breaking;
-
         public TruckController TruckController { get; private set; }
+        public AddonManager AddonManager { get; private set; }
 
+        private Vector2 _driveSteer;
+        private bool _breaking;
+        private Vector2 _addonControl;
         public void Start()
         {
             SpawnPlayerTruck();
@@ -36,34 +35,67 @@ namespace MTT2
         {
             var obj = Instantiate(truckPrefab, spawnPosition.position, Quaternion.Euler(Vector3.zero));
             TruckController = obj.GetComponent<TruckController>();
-            TruckController.TruckDef = playerTruck;
-            TruckController.SetWheelDef(playerWheels);
+            TruckController.TruckDef = playerPreferenceData.truckDef;
+            TruckController.SetWheelDef(playerPreferenceData.wheelDef);
+            AddonManager = TruckController.AddonManager;
 
+            AddonManager.SpawnAddons(playerPreferenceData.addonSpawnData);
             CameraController.Instance.SetFollow(obj.transform);
-        }
-
-        public void OnMove(InputAction.CallbackContext context)
-        {
-            var input = context.ReadValue<Vector2>();
-            drive = input.y;
-            steer = input.x;
-        }
-
-        public void OnBreak(InputAction.CallbackContext context)
-        {
-            breaking = context.ReadValueAsButton();
         }
 
         private void FixedUpdate()
         {
-            TruckControllerUpdate();
+            TruckControllerFixedUpdate();
+            AddonManagerFixedUpdate();
         }
 
-        private void TruckControllerUpdate()
+        private void TruckControllerFixedUpdate()
         {
-            TruckController.driveValue = drive;
-            TruckController.steerValue = steer;
-            TruckController.breaking = breaking;
+            TruckController.driveValue = _driveSteer.y;
+            TruckController.steerValue = _driveSteer.x;
+            TruckController.breaking = _breaking;
         }
+
+        private void AddonManagerFixedUpdate() => AddonManager.AddonControl = _addonControl;
+
+        #region Input Action Callbacks
+        public void OnMove(InputAction.CallbackContext context)
+        {
+            _driveSteer = context.ReadValue<Vector2>();
+        }
+
+        public void OnBreak(InputAction.CallbackContext context)
+        {
+            _breaking = context.ReadValueAsButton();
+        }
+
+        public void OnAddonTrigger(InputAction.CallbackContext context)
+        {
+            AddonLocator.AddonLocation location = AddonLocator.AddonLocation.Unknown;
+            switch(context.action.name)
+            {
+                case "AddonTopTrigger":
+                    location = AddonLocator.AddonLocation.Top;
+                    break;
+                case "AddonBottomTrigger":
+                    location = AddonLocator.AddonLocation.Bottom;
+                    break;
+                case "AddonFrontTrigger":
+                    location = AddonLocator.AddonLocation.Front;
+                    break;
+                case "AddonBackTrigger":
+                    location = AddonLocator.AddonLocation.Back;
+                    break;
+            }
+            if (location == AddonLocator.AddonLocation.Unknown)
+                return;
+            AddonManager.RelyTrigger(ref context, location);
+        }
+
+        public void OnAddonControl(InputAction.CallbackContext context)
+        {
+            _addonControl = context.ReadValue<Vector2>();
+        }
+        #endregion
     }
 }

@@ -7,7 +7,8 @@ namespace MTT2.Addons
     [CreateAssetMenu(menuName = "MonsterToyTruck2/AddonDef")]
     public class AddonDef : ScriptableObject
     {
-        [SerializableSystemType.RequiredBaseType(typeof(AddonBehaviourBase))]
-        public SerializableSystemType behaviourClass;
+        public GameObject addonPrefab;
+        public string addonName;
+        public string addonDescription;
     }
 }

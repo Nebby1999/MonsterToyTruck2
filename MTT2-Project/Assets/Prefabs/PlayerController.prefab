@@ -46,12 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdfc7730485cec444babcbc2c46545db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTruck: {fileID: 11400000, guid: 43232b8428d6a834a99b193bbb3eecef, type: 2}
-  playerWheels: {fileID: 11400000, guid: acefefb15c4ad5a4882d22ec61437c8d, type: 2}
+  playerPreferenceData: {fileID: 11400000, guid: 43eba9a82f4cf8d46b34c9ae3c7ec1bc, type: 2}
   truckPrefab: {fileID: 3319958538035206442, guid: f00b01982269c184a9d62597a7ea5f6b, type: 3}
-  drive: 0
-  steer: 0
-  breaking: 0
 --- !u!114 &2662965373937992586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,14 +101,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2a048bd4-85d6-443b-ab69-e951adf6b410
     m_ActionName: Player/Drive[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ff587c73-2f9f-430a-84f1-9bfbc90d4e7f
-    m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: e21126ed-c1c5-47f8-be87-aded8cf8fcce
-    m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: ac4dbb68-3d0c-4432-a068-6b5f59df860b
@@ -169,6 +157,86 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 574396f8-7123-4a40-9b85-760460e26764
     m_ActionName: Player/Break[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1939162541016163200}
+        m_TargetAssemblyTypeName: MTT2.PlayerController, MonsterToyTruck2
+        m_MethodName: OnAddonTrigger
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 005eb43a-ac5c-431c-8b4f-e87476366e10
+    m_ActionName: Player/Addon1Trigger[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1939162541016163200}
+        m_TargetAssemblyTypeName: MTT2.PlayerController, MonsterToyTruck2
+        m_MethodName: OnAddonTrigger
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 277dd46a-40b2-4c47-974f-497497b3de0f
+    m_ActionName: Player/Addon2Trigger[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1939162541016163200}
+        m_TargetAssemblyTypeName: MTT2.PlayerController, MonsterToyTruck2
+        m_MethodName: OnAddonTrigger
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8e0e4f7a-691f-4de1-a97f-fd7a971f60b5
+    m_ActionName: Player/Addon3Trigger[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1939162541016163200}
+        m_TargetAssemblyTypeName: MTT2.PlayerController, MonsterToyTruck2
+        m_MethodName: OnAddonTrigger
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8971a76c-56ee-4844-9997-5e35aea04749
+    m_ActionName: Player/Addon4Trigger[/Keyboard/4]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1939162541016163200}
+        m_TargetAssemblyTypeName: MTT2.PlayerController, MonsterToyTruck2
+        m_MethodName: OnAddonControl
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5cb4deb5-f584-4f1a-84a1-600afcc59ee1
+    m_ActionName: Player/AddonControl[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

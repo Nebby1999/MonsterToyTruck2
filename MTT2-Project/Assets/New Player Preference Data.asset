@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bb2da904bf2114ea1abd8c13a9194e, type: 3}
+  m_Name: New Player Preference Data
+  m_EditorClassIdentifier: 
+  truckDef: {fileID: 11400000, guid: 43232b8428d6a834a99b193bbb3eecef, type: 2}
+  wheelDef: {fileID: 11400000, guid: acefefb15c4ad5a4882d22ec61437c8d, type: 2}
+  addonSpawnData:
+    topAddon: {fileID: 0}
+    bottomAddon: {fileID: 0}
+    frontAddon: {fileID: 0}
+    backAddon: {fileID: 11400000, guid: 21d89c9ffc35fce4c9d9075dfb560e56, type: 2}
