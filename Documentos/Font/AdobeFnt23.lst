@@ -1,0 +1,99 @@
+%!Adobe-FontList 1.23
+%Locale:0x80a
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:F:\Documentos\GitHub\MonsterToyTruck2\Documentos\Font\ds_digital.zip
+FileModTime:1652730084
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:F:\Documentos\GitHub\MonsterToyTruck2\Documentos\Font\gun_metal.zip
+FileModTime:1652730876
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:F:\Documentos\GitHub\MonsterToyTruck2\Documentos\Font\k26toyblocks123.zip
+FileModTime:1652730882
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:F:\Documentos\GitHub\MonsterToyTruck2\Documentos\Font\metallic.zip
+FileModTime:1652730888
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:F:\Documentos\GitHub\MonsterToyTruck2\Documentos\Font\open_24_display_st.zip
+FileModTime:1652728405
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:F:\Documentos\GitHub\MonsterToyTruck2\Documentos\Font\speed_solid.zip
+FileModTime:1652733352
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:TamanKanak
+FamilyName:Taman Kanak
+StyleName:Regular
+FullName:Taman Kanak
+MenuName:Taman Kanak
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:F:\Documentos\GitHub\MonsterToyTruck2\Documentos\Font\taman-kanak.regular.ttf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:21200
+FileModTime:1653342449
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Taman Kanak
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ThunderLord
+FamilyName:Thunder Lord
+StyleName:Regular
+FullName:Thunder Lord
+MenuName:Thunder Lord
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:F:\Documentos\GitHub\MonsterToyTruck2\Documentos\Font\thunder-lord.regular.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:22164
+FileModTime:1653342445
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Thunder Lord
+NameArray:0,Win,1,Thunder Lord
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:F:\Documentos\GitHub\MonsterToyTruck2\Documentos\Font\wayfarer_s_toy_box.zip
+FileModTime:1652730879
+%EndFont
+
