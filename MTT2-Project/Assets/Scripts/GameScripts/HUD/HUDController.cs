@@ -13,6 +13,7 @@ namespace MTT2.HUD
         private Label speedMeter;
         private VisualElement fuelMeter;
         private VisualElement speedSymbol;
+        private Slider playerPos;
 
         private void Awake()
         {
@@ -26,11 +27,13 @@ namespace MTT2.HUD
             speedMeter = root.Q<Label>("SpeedCurrent");
             fuelMeter = root.Q("FuelLevel");
             speedSymbol = root.Q("Lord");
+            playerPos = root.Q<Slider>("Slider");
         }
 
         void Update()
         {
             Header();
+            Footer();
         }
         void Header()
         {
@@ -43,7 +46,13 @@ namespace MTT2.HUD
         }
         void Footer()
         {
-            
+            PlayerPositionHUD();
+        }
+        void PlayerPositionHUD()
+        {
+            float lvlSize = Vector3.Distance(sceneController.spawnPoint.position, sceneController.finishLine.position);
+            float inLvlPos = Vector3.Distance(playerController.TruckController.transform.position, sceneController.finishLine.position);
+            playerPos.value = InversePercentage(inLvlPos, lvlSize);
         }
         private static float Percentage(float current, float max)
         {
