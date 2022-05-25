@@ -8,9 +8,9 @@
     <VisualElement name="Background" class="car-bg">
         <VisualElement name="UI-Container" class="car-menu">
             <Label text="MODIFY UR CAR"/>
-            <Button/>
-            <Button/>
-            <Button/>
+            <Button name="add1"/>
+            <Button name="add2"/>
+            <Button name="add3"/>
         </VisualElement>
     </VisualElement>
 </UXML>

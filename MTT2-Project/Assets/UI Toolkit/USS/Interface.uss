@@ -42,25 +42,24 @@ Button:active{
     height: 33%;
 }
 .lvl-bg{
-    /* flex-direction: column-reverse; */
+    height:30%;
+    width:100%;
 }
 .level-menu{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height:30%;
-    width:100%;
 }
-#lvl-button{
+.lvl-button{
     width: 20%;
 }
 .car-bg{
     flex-direction: column-reverse;
+    height:30%;
+    width:100%;
 }
 .car-menu{
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    height:30%;
-    width:100%;
 }
