@@ -1,0 +1,66 @@
+Label{
+    -unity-font: url("../../Font/Kid Playon.ttf");
+    -unity-font-definition: url("../../Font/Kid Playon.ttf");
+    -unity-font-style: bold;
+    font-size: 96px;
+}
+Button{
+    -unity-font: url("../../Font/MyUglyHandwriting-Regular.otf");
+    -unity-font-definition: url("../../Font/MyUglyHandwriting-Regular.otf");
+    font-size: 96px;
+}
+Button:active{
+    -unity-font-style: bold;
+}
+#Background{
+    height:100%;
+    width:100%;
+}
+#Logo{
+    --unity-image: url("../../Resources/Images/Logo.png")
+    height: 45%;
+    width: 45%;
+}
+#UI-Container{
+    background-color: grey;
+}
+.main-bg{
+    justify-content: space-between;
+    padding-left: 2.5%;
+    align-items: flex-end;
+    flex-direction: row;
+}
+.main-menu-container{
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu-button{
+    width: 90%;
+    height: 33%;
+}
+.lvl-bg{
+    /* flex-direction: column-reverse; */
+}
+.level-menu{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height:30%;
+    width:100%;
+}
+#lvl-button{
+    width: 20%;
+}
+.car-bg{
+    flex-direction: column-reverse;
+}
+.car-menu{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height:30%;
+    width:100%;
+}

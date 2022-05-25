@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd">
+    <Style src="../USS/Interface.uss"/>
+
+    <VisualElement name="Background" class="main-bg">
+        <Image name="Logo"/>
+        <VisualElement name="UI-Container" class="main-menu-container">
+            <Label text="MAIN MENU" />
+            <Button text="play" name="play" class="menu-button"/>
+            <Button text="exit" name="exit" class="menu-button"/>
+        </VisualElement>
+    </VisualElement>
+</UXML>
