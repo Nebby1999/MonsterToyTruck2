@@ -4,9 +4,9 @@ using UnityEngine.UIElements;
 public class MenuManager : VisualElement
 {
     #region Screens
-    VisualElement m_Main;
-    VisualElement m_Level;
-    VisualElement m_Car;
+    VisualElement s_Main;
+    VisualElement s_Level;
+    VisualElement s_Car;
     #endregion
     #region Buttons
     Button b_play;
@@ -25,9 +25,9 @@ public class MenuManager : VisualElement
         #region ScreenSetter
         this.RegisterCallback<AttachToPanelEvent>((x) =>
         {
-            m_Car = this.Q<VisualElement>("CarMenu");
-            m_Level = this.Q<VisualElement>("LevelMenu");
-            m_Main = this.Q<VisualElement>("Menu");
+            s_Car = this.Q<VisualElement>("CarMenu");
+            s_Level = this.Q<VisualElement>("LevelMenu");
+            s_Main = this.Q<VisualElement>("Menu");
         });
         #endregion
         this.RegisterCallback<GeometryChangedEvent>(OnGeometryChange);
@@ -57,21 +57,21 @@ public class MenuManager : VisualElement
     public void EnableHome(){
         DisableAllScreens();
 
-        m_Main.style.display = DisplayStyle.Flex;
+        s_Main.style.display = DisplayStyle.Flex;
     }
     public void EnableLevelMenu(){
         DisableAllScreens();
 
-        m_Level.style.display = DisplayStyle.Flex;
+        s_Level.style.display = DisplayStyle.Flex;
     }
     public void EnableCarMenu(){
         DisableAllScreens();
 
-        m_Car.style.display = DisplayStyle.Flex;
+        s_Car.style.display = DisplayStyle.Flex;
     }
     public void DisableAllScreens(){
-        m_Main.style.display = DisplayStyle.None;
-        m_Level.style.display = DisplayStyle.None;
-        m_Car.style.display = DisplayStyle.None;
+        s_Main.style.display = DisplayStyle.None;
+        s_Level.style.display = DisplayStyle.None;
+        s_Car.style.display = DisplayStyle.None;
     }
 }
