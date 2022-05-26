@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 public class MenuManager : VisualElement
@@ -22,16 +23,18 @@ public class MenuManager : VisualElement
     public new class UxmlTraits : VisualElement.UxmlTraits{}
     public MenuManager(){
         #region ScreenSetter
-        m_Car = this.Q<VisualElement>("CarMenu");
-        m_Level = this.Q<VisualElement>("LevelMenu");
-        m_Main = this.Q<VisualElement>("Menu");
+        this.RegisterCallback<AttachToPanelEvent>((x) =>
+        {
+            m_Car = this.Q<VisualElement>("CarMenu");
+            m_Level = this.Q<VisualElement>("LevelMenu");
+            m_Main = this.Q<VisualElement>("Menu");
+        });
         #endregion
         this.RegisterCallback<GeometryChangedEvent>(OnGeometryChange);
     }
 
     private void OnGeometryChange(GeometryChangedEvent evt)
     {
-        Debug.Log(this);
         #region ButtonSetter
         b_play = this.Q<Button>("play");
         b_exit = this.Q<Button>("exit");
@@ -48,6 +51,8 @@ public class MenuManager : VisualElement
         b_lvl2?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
         b_lvl3?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
         b_exit?.RegisterCallback<ClickEvent>(ev => UnityEditor.EditorApplication.isPlaying = false);
+
+        UnregisterCallback<GeometryChangedEvent>(OnGeometryChange);
     }
     public void EnableHome(){
         DisableAllScreens();
