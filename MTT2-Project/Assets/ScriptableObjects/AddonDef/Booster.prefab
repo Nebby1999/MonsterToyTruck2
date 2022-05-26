@@ -45,6 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d7734d26e646a47900e9cafa365242, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseBoostCoefficient: 0.1
+  maxBoostCoefficient: 1
+  coefficientGain: 0.05
 --- !u!1 &6337659271030856711
 GameObject:
   m_ObjectHideFlags: 0
