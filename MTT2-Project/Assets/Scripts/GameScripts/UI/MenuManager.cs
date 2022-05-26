@@ -22,14 +22,14 @@ public class MenuManager : VisualElement
     public new class UxmlFactory : UxmlFactory<MenuManager, UxmlTraits>{}
     public new class UxmlTraits : VisualElement.UxmlTraits{}
     public MenuManager(){
-        #region ScreenSetter
         this.RegisterCallback<AttachToPanelEvent>((x) =>
         {
+            #region ScreenSetter //Necesita correr en este eento para poder referenciarse desde MonoBehaviour Awake o Start
             s_Car = this.Q<VisualElement>("CarMenu");
             s_Level = this.Q<VisualElement>("LevelMenu");
             s_Main = this.Q<VisualElement>("Menu");
+            #endregion
         });
-        #endregion
         this.RegisterCallback<GeometryChangedEvent>(OnGeometryChange);
     }
 
@@ -45,6 +45,7 @@ public class MenuManager : VisualElement
         b_addon2 = this.Q<Button>("add2");
         b_addon3 = this.Q<Button>("add3");
         #endregion
+        
         //Click Events
         b_play?.RegisterCallback<ClickEvent>(ev => EnableLevelMenu());
         b_lvl1?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
