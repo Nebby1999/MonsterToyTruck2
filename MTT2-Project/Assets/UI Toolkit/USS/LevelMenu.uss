@@ -1,0 +1,16 @@
+.bg {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 200px;
+    border-bottom-width: 5px;
+}
+
+.btn {
+    width: 20%;
+}

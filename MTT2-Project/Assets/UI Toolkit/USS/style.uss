@@ -1,29 +1,51 @@
-VisualElement {
+Label {
+    -unity-font: url('project://database/Assets/Font/Kid%20Playon.ttf?fileID=12800000&guid=8237154437309bc4789d828ed155f650&type=3#Kid Playon');
+    -unity-font-definition: url('project://database/Assets/Font/Kid%20Playon.ttf?fileID=12800000&guid=8237154437309bc4789d828ed155f650&type=3#Kid Playon');
+    -unity-font-style: bold;
+    font-size: 96px;
 }
 
-.menu-button {
+Button {
+    -unity-font: url('project://database/Assets/Font/MyUglyHandwriting-Regular.otf?fileID=12800000&guid=18bbe588326ee7c4dafee5f7d7ef6ac6&type=3#MyUglyHandwriting-Regular');
+    -unity-font-definition: url('project://database/Assets/Font/MyUglyHandwriting-Regular.otf?fileID=12800000&guid=18bbe588326ee7c4dafee5f7d7ef6ac6&type=3#MyUglyHandwriting-Regular');
+    font-size: 96px;
+    border-width: 0.5px;
+    cursor: pointer;
+    background-image: url('project://database/Assets/Resources/Images/button.png?fileID=21300000&guid=3c2b47f70200deb4e93cdd61d17656ce&type=3#button');
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+Button:hover {
+    -unity-font-style: bold;
+    transform: rotate;
+    transition-property: rotate;
+    transition-duration: 500ms;
+    transition-delay: 20ms;
+    transition-timing-function: linear;
+    rotate: 17.5deg;
+}
+#Background {
+    height: 100%;
     width: 100%;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    height: 20%;
-    min-height: 25%;
-    max-height: 33%;
-    max-width: 30%;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
-    border-left-color: rgba(0, 0, 0, 0.5);
-    border-right-color: rgba(0, 0, 0, 0.5);
-    border-top-color: rgba(0, 0, 0, 0.5);
-    border-bottom-color: rgba(0, 0, 0, 0.5);
-    background-color: rgba(43, 43, 43, 0.5);
-    -unity-text-align: middle-center;
-    white-space: nowrap;
+}
+
+#Logo {
+    --unity-image: url('project://database/Assets/Resources/Images/Logo.png?fileID=21300000&guid=6cb8b0dfd33c9c4408804f93c3c31b4a&type=3#Logo') height 45%;
+    width: 45%;
+}
+
+#UI-Container {
+    background-image: url('project://database/Assets/Resources/Images/paper.png?fileID=21300000&guid=9827ba31e865c9444a59b704804f9d36&type=3#paper');
+    -unity-background-scale-mode: scale-and-crop;
+    border-color: grey;
+}
+.footer{
+    width:100%;
+    height:100%;
+    flex-direction: column-reverse;
+}
+.header{
+    width:100%;
+    height:100%;
+    flex-direction: column;
 }

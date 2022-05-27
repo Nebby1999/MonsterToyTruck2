@@ -24,7 +24,8 @@ public class MenuManager : VisualElement
     public MenuManager(){
         this.RegisterCallback<AttachToPanelEvent>((x) =>
         {
-            #region ScreenSetter //Necesita correr en este eento para poder referenciarse desde MonoBehaviour Awake o Start
+            //Necesita correr en este evento para poder referenciarse desde MonoBehaviour Awake o Start
+            #region ScreenSetter 
             s_Car = this.Q<VisualElement>("CarMenu");
             s_Level = this.Q<VisualElement>("LevelMenu");
             s_Main = this.Q<VisualElement>("Menu");

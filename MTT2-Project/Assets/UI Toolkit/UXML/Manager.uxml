@@ -1,11 +1,11 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:Style src="project://database/Assets/UI%20Toolkit/USS/MainMenu.uss?fileID=7433441132597879392&amp;guid=30169705738c5f54e9e33944c3ffdf68&amp;type=3#MainMenu"/>
-    <ui:Template name="Menu" src="project://database/Assets/UI%20Toolkit/UXML/Menu.uxml?fileID=9197481963319205126&amp;guid=efac2ce1f2611e94daf8dfc738896f6b&amp;type=3#Menu" />
     <ui:Template name="Lvl" src="project://database/Assets/UI%20Toolkit/UXML/LevelMenu.uxml?fileID=9197481963319205126&amp;guid=add17d273a3e56341b8e4051eb20c48f&amp;type=3#LevelMenu" />
+    <ui:Template name="Menu" src="project://database/Assets/UI%20Toolkit/UXML/Menu.uxml?fileID=9197481963319205126&amp;guid=efac2ce1f2611e94daf8dfc738896f6b&amp;type=3#Menu" />
     <ui:Template name="Car" src="project://database/Assets/UI%20Toolkit/UXML/CarMenu.uxml?fileID=9197481963319205126&amp;guid=15f3200bae5a6b444828c5398521a561&amp;type=3#CarMenu" />
+    <Style src="project://database/Assets/UI%20Toolkit/USS/style.uss?fileID=7433441132597879392&amp;guid=245dd5f4904ff0b40adf271525d15ec8&amp;type=3#style" />
     <MenuManager name="Manager">
-        <ui:Instance template="Lvl" name="LevelMenu" />
+        <ui:Instance template="Lvl" name="LevelMenu" class="header" />
         <ui:Instance template="Menu" name="Menu" />
-        <ui:Instance template="Car" name="CarMenu" />
+        <ui:Instance template="Car" name="CarMenu" class="footer" style="flex-direction: column; height: 100%; width: 100%; justify-content: flex-start;" />
     </MenuManager>
 </ui:UXML>

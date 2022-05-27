@@ -1,0 +1,12 @@
+.bg {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    border-bottom-width: 5px;
+}
