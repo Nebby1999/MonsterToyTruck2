@@ -18,7 +18,7 @@ namespace MTT2
         private Vector2 _driveSteer;
         private bool _breaking;
         private Vector2 _addonControl;
-        public Vector2 _Mouse;
+        public Vector2 _mouse;
 
         public void Start()
         {
@@ -58,7 +58,11 @@ namespace MTT2
             TruckController.breaking = _breaking;
         }
 
-        private void AddonManagerFixedUpdate() => AddonManager.AddonControl = _addonControl;
+        private void AddonManagerFixedUpdate()
+        {
+            AddonManager.AddonControl = _addonControl;
+            AddonManager.MousePos = _mouse;
+        } 
 
         #region Input Action Callbacks
         public void OnMove(InputAction.CallbackContext context)
@@ -101,7 +105,7 @@ namespace MTT2
 
         public void OnMouse(InputAction.CallbackContext context)
         {
-            _Mouse = context.ReadValue<Vector2>();
+            _mouse = context.ReadValue<Vector2>();
         }
         #endregion
     }
