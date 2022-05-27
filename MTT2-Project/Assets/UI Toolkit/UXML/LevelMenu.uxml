@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="UnityEngine.UIElements" xsi:noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd">
+    <Style src="../USS/Interface.uss"/>
+    <VisualElement name="Background" class="lvl-bg">
+        <VisualElement name="UI-Container" class="level-menu">
+            <Label text="SELECT A LEVEL"/>
+            <Button text="lvl 1" name="lvl1" class="lvl-button"/>
+            <Button text="lvl 2" name="lvl2" class="lvl-button"/>
+            <Button text="lvl 3" name="lvl3" class="lvl-button"/>
+        </VisualElement>
+    </VisualElement>
+</UXML>
