@@ -18,6 +18,8 @@ namespace MTT2
         private Vector2 _driveSteer;
         private bool _breaking;
         private Vector2 _addonControl;
+        public Vector2 _Mouse;
+
         public void Start()
         {
             SpawnPlayerTruck();
@@ -95,6 +97,11 @@ namespace MTT2
         public void OnAddonControl(InputAction.CallbackContext context)
         {
             _addonControl = context.ReadValue<Vector2>();
+        }
+
+        public void OnMouse(InputAction.CallbackContext context)
+        {
+            _Mouse = context.ReadValue<Vector2>();
         }
         #endregion
     }
