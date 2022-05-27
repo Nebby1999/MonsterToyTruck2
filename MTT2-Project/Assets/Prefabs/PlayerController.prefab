@@ -237,6 +237,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 5cb4deb5-f584-4f1a-84a1-600afcc59ee1
     m_ActionName: Player/AddonControl[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1939162541016163200}
+        m_TargetAssemblyTypeName: MTT2.PlayerController, MonsterToyTruck2
+        m_MethodName: OnMouse
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a66aa59a-1f5b-437e-a1d7-ceae3b294b79
+    m_ActionName: Player/Mouse[/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
