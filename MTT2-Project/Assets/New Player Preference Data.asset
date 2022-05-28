@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: New Player Preference Data
   m_EditorClassIdentifier: 
   truckDef: {fileID: 11400000, guid: 43232b8428d6a834a99b193bbb3eecef, type: 2}
-  wheelDef: {fileID: 11400000, guid: d78199a0140ac8c4ab5d70657191cff9, type: 2}
+  wheelDef: {fileID: 11400000, guid: acefefb15c4ad5a4882d22ec61437c8d, type: 2}
   addonSpawnData:
-    topAddon: {fileID: 0}
+    topAddon: {fileID: 11400000, guid: 3fa9d0eaf94bd224b9e04f6d2aa2ef30, type: 2}
     bottomAddon: {fileID: 0}
     frontAddon: {fileID: 0}
-    backAddon: {fileID: 0}
+    backAddon: {fileID: 11400000, guid: 21d89c9ffc35fce4c9d9075dfb560e56, type: 2}

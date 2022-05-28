@@ -17,7 +17,7 @@ namespace MTT2
         private Vector2 _driveSteer;
         private bool _breaking;
         private Vector2 _addonControl;
-        public Vector2 _mouse;
+        private Vector2 _mouse;
 
         public void Start()
         {
@@ -105,6 +105,19 @@ namespace MTT2
         public void OnMouse(InputAction.CallbackContext context)
         {
             _mouse = context.ReadValue<Vector2>();
+        }
+
+        public void OnClick(InputAction.CallbackContext context)
+        {
+            switch(context.action.name)
+            {
+                case "RightClick":
+                    AddonManager.RelyClick(ref context, true);
+                    break;
+                case "LeftClick":
+                    AddonManager.RelyClick(ref context, false);
+                    break;
+            }
         }
         #endregion
     }

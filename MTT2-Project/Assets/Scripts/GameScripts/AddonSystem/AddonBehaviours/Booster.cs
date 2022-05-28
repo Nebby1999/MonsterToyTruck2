@@ -6,11 +6,20 @@ namespace MTT2.Addons
 {
     public class Booster : AddonBehaviourBase
     {
-        bool value;
         public float baseBoostCoefficient;
         public float maxBoostCoefficient;
         public float coefficientGain;
+        public Sprite on;
+        public Sprite off;
+
+        SpriteRenderer spriteRenderer;
         float coefficient;
+        bool value;
+
+        public void Awake()
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
         public override void AddonTrigger(InputAction.CallbackContext context)
         {
             value = context.ReadValueAsButton();
@@ -23,6 +32,7 @@ namespace MTT2.Addons
             {
                 TruckController.RigidBody2d.AddForceAtPosition(Vector2.right * coefficient, transform.position, ForceMode2D.Impulse);
             }
+            spriteRenderer.sprite = value ? on : off;
         }
 
         private void CalculateCoefficient()

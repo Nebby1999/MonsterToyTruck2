@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPreferenceData: {fileID: 11400000, guid: 43eba9a82f4cf8d46b34c9ae3c7ec1bc, type: 2}
-  truckPrefab: {fileID: 3319958538035206442, guid: f00b01982269c184a9d62597a7ea5f6b, type: 3}
 --- !u!114 &2662965373937992586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,6 +252,38 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a66aa59a-1f5b-437e-a1d7-ceae3b294b79
     m_ActionName: Player/Mouse[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1939162541016163200}
+        m_TargetAssemblyTypeName: MTT2.PlayerController, MonsterToyTruck2
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d1952e44-f360-4efe-8a29-7b6a8908b9c4
+    m_ActionName: Player/LeftClick[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1939162541016163200}
+        m_TargetAssemblyTypeName: MTT2.PlayerController, MonsterToyTruck2
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4071726a-9cb5-4bbe-b7bf-6dab2b5b02a3
+    m_ActionName: Player/RightClick[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
