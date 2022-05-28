@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9244c09919e1d6546b122469aabd8833, type: 3}
   m_Name: GrayWheel
   m_EditorClassIdentifier: 
-  wheelPrefab: {fileID: 0}
+  wheelPrefab: {fileID: 1446726443235927781, guid: 0c7ec7ebfbd350745b28a470c454b0ea, type: 3}
   breakStrength: 0.25
   maxAngularVelocity: 1500
   wheelMass: 0.75

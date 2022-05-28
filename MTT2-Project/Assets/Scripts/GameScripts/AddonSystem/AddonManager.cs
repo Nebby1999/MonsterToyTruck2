@@ -49,6 +49,20 @@ namespace MTT2.Addons
             behaviour.AddonTrigger(context);
         }
 
+        public void RelyClick(ref InputAction.CallbackContext context, bool isRightClick)
+        {
+            foreach(AddonBehaviourBase behaviourBase in AddonLocator.AddonBehaviours)
+            {
+                if (!behaviourBase)
+                    continue;
+
+                if (isRightClick)
+                    behaviourBase.RightClick(context);
+                else
+                    behaviourBase.LeftClick(context);
+            }
+        }
+
         public void SpawnAddons(AddonSpawnData data)
         {
             AddonLocator.SetAddon(data.topAddon?.addonPrefab, AddonLocator.AddonLocation.Top);

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b575ec8a861774d86019ab6633290e, type: 3}
   m_Name: MissileLauncher
   m_EditorClassIdentifier: 
-  addonPrefab: {fileID: 0}
+  addonPrefab: {fileID: 4552220246433155065, guid: cbe21ade53990e1488c6b5fc3c9f3671, type: 3}
   addonName: 
   addonDescription: 
