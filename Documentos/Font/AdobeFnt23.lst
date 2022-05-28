@@ -25,8 +25,22 @@ FileModTime:1652730882
 %BeginFont
 Handler:DirectoryHandler
 FontType:Invalid
+OutlineFileName:F:\Documentos\GitHub\MonsterToyTruck2\Documentos\Font\kid_playon.zip
+FileModTime:1653450384
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
 OutlineFileName:F:\Documentos\GitHub\MonsterToyTruck2\Documentos\Font\metallic.zip
 FileModTime:1652730888
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:F:\Documentos\GitHub\MonsterToyTruck2\Documentos\Font\my_ugly_handwriting.zip
+FileModTime:1653450388
 %EndFont
 
 %BeginFont

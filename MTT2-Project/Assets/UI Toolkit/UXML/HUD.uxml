@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Header" src="project://database/Assets/UI%20Toolkit/UXML/Header.uxml?fileID=9197481963319205126&amp;guid=6c2863662b3c4dc4f9581033dd12e00a&amp;type=3#Header" />
+    <ui:Template name="Footer" src="project://database/Assets/UI%20Toolkit/UXML/Footer.uxml?fileID=9197481963319205126&amp;guid=79a4ee2cb208a2148a40defb74f454b6&amp;type=3#Footer" />
+    <Style src="project://database/Assets/UI%20Toolkit/USS/HUD.uss?fileID=7433441132597879392&amp;guid=4b5018658f37019428721830dbcbefe2&amp;type=3#HUD" />
+    <ui:VisualElement name="Background" class="bg" style="align-items: center;">
+        <ui:Instance template="Header" name="Header" style="align-items: stretch; width: 100%;" />
+        <ui:Instance template="Footer" name="Footer" style="flex-direction: column; height: 100%; min-height: auto; max-height: 100px; -unity-background-scale-mode: stretch-to-fill;" />
+    </ui:VisualElement>
+</ui:UXML>

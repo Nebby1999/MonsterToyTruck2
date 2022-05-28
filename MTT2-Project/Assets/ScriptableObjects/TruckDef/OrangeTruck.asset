@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781a71e89172c1148a3b54770f1eeb59, type: 3}
+  m_Name: OrangeTruck
+  m_EditorClassIdentifier: 
+  truckPrefab: {fileID: 3319958538035206442, guid: f00b01982269c184a9d62597a7ea5f6b, type: 3}
+  mass: 0.75
+  maxFuelBase: 75
+  baseFuelConsumptionRate: 1
+  baseSpeed: 400
+  fuelDrivingCoefficient: 1
+  manouverability: 1100
+  dampingRatio: 0.9
+  frequency: 10
+  angle: 90

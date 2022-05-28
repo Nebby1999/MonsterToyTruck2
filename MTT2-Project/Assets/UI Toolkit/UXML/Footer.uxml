@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="LevelPosition" src="project://database/Assets/UI%20Toolkit/UXML/LevelPosition.uxml?fileID=9197481963319205126&amp;guid=99f8c62e459152544843f60191c6723a&amp;type=3#LevelPosition" />
+    <Style src="../USS/Footer.uss"/>
+    <ui:VisualElement name="Background" class="bg">
+        <ui:VisualElement name="UI-Container" class="container">
+            <ui:VisualElement name="Line-Container">
+                <ui:Instance template="LevelPosition" name="LevelPosition" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

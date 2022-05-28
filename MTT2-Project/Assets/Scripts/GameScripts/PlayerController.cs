@@ -10,7 +10,6 @@ namespace MTT2
     {
         public static Action<PlayerController> OnPlayerStart;
         public PlayerPreferenceData playerPreferenceData;
-        public GameObject truckPrefab;
 
         public TruckController TruckController { get; private set; }
         public AddonManager AddonManager { get; private set; }
@@ -18,6 +17,8 @@ namespace MTT2
         private Vector2 _driveSteer;
         private bool _breaking;
         private Vector2 _addonControl;
+        public Vector2 _mouse;
+
         public void Start()
         {
             SpawnPlayerTruck();
@@ -33,10 +34,10 @@ namespace MTT2
 
         public void SpawnPlayerTruck(Transform spawnPosition)
         {
-            var obj = Instantiate(truckPrefab, spawnPosition.position, Quaternion.Euler(Vector3.zero));
+            var obj = Instantiate(playerPreferenceData.truckDef.truckPrefab, spawnPosition.position, Quaternion.Euler(Vector3.zero));
             TruckController = obj.GetComponent<TruckController>();
             TruckController.TruckDef = playerPreferenceData.truckDef;
-            TruckController.SetWheelDef(playerPreferenceData.wheelDef);
+            TruckController.WheelDef = playerPreferenceData.wheelDef;
             AddonManager = TruckController.AddonManager;
 
             AddonManager.SpawnAddons(playerPreferenceData.addonSpawnData);
@@ -51,12 +52,16 @@ namespace MTT2
 
         private void TruckControllerFixedUpdate()
         {
-            TruckController.driveValue = _driveSteer.y;
-            TruckController.steerValue = _driveSteer.x;
-            TruckController.breaking = _breaking;
+            TruckController.DriveValue = _driveSteer.y;
+            TruckController.SteerValue = _driveSteer.x;
+            TruckController.Breaking = _breaking;
         }
 
-        private void AddonManagerFixedUpdate() => AddonManager.AddonControl = _addonControl;
+        private void AddonManagerFixedUpdate()
+        {
+            AddonManager.AddonControl = _addonControl;
+            AddonManager.MousePos = _mouse;
+        } 
 
         #region Input Action Callbacks
         public void OnMove(InputAction.CallbackContext context)
@@ -95,6 +100,11 @@ namespace MTT2
         public void OnAddonControl(InputAction.CallbackContext context)
         {
             _addonControl = context.ReadValue<Vector2>();
+        }
+
+        public void OnMouse(InputAction.CallbackContext context)
+        {
+            _mouse = context.ReadValue<Vector2>();
         }
         #endregion
     }

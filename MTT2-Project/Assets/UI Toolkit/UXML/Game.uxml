@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="HUD" src="project://database/Assets/UI%20Toolkit/UXML/HUD.uxml?fileID=9197481963319205126&amp;guid=493792101926fbb4f96bd8a96b7b1c8b&amp;type=3#HUD" />
+    <ui:Template name="GameMenu" src="project://database/Assets/UI%20Toolkit/UXML/GameMenu.uxml?fileID=9197481963319205126&amp;guid=cba264a21338f8b4392b38e18a829516&amp;type=3#GameMenu" />
+    <Style src="../USS/style.uss"/>
+    <HUDManager name="Manager" style="justify-content: center; width: 100%; height: 100%; align-items: stretch; flex-direction: row;">
+        <ui:Instance template="HUD" name="HUD" style="justify-content: flex-start; width: 100%; height: 100%;" />
+        <ui:Instance template="GameMenu" name="GameMenu" style="position:absolute; right:1px; width: 40%; height: 100%;" />
+    </HUDManager>
+</ui:UXML>

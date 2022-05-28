@@ -7,22 +7,29 @@ namespace MTT2.HUD
 {
     public class HUDController : MonoBehaviour
     {
+        #region Classes
         public SceneController sceneController;
         public PlayerController playerController;
-
+        #endregion
+        #region UI
+        HUDManager m_manager;
         private Label speedMeter;
         private VisualElement fuelMeter;
         private VisualElement speedSymbol;
         private Slider playerPos;
+        #endregion
 
         private void Awake()
         {
             SetHUDElements();
+            m_manager.EnableHUD();
         }
 
         private void SetHUDElements()
         {
             var root = GetComponent<UIDocument>().rootVisualElement;
+            
+            m_manager = root.Q<HUDManager>("Manager");
 
             speedMeter = root.Q<Label>("SpeedCurrent");
             fuelMeter = root.Q("FuelLevel");
@@ -39,7 +46,7 @@ namespace MTT2.HUD
         {
             var rigidBody = playerController.TruckController.RigidBody2d;
 
-            speedMeter.text = Mathf.Abs(rigidBody.velocity.x * 10).ToString("000");
+            speedMeter.text = Mathf.Abs(rigidBody.velocity.x * 10).ToString("00");
             speedSymbol.style.width = new StyleLength(Length.Percent(InversePercentage(rigidBody.velocity.x, 10)));
             
             fuelMeter.style.height = new StyleLength(Length.Percent(Percentage(playerController.TruckController.fuel, playerController.TruckController.TruckDef.maxFuelBase)));

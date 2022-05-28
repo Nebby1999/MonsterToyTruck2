@@ -5,10 +5,8 @@ namespace MTT2
     [CreateAssetMenu(menuName = "MonsterToyTruck2/TruckDef")]
     public class TruckDef : ScriptableObject
     {
-        [Tooltip("The sprite tied to this truckDef")]
-        public Sprite chasisSprite;
-        [Tooltip("The physics material for this TruckDef")]
-        public PhysicsMaterial2D chasisMaterial;
+        [Tooltip("The prefab tied to this TruckDef")]
+        public GameObject truckPrefab;
 
         [Tooltip("The Mass applied to the rigidbody")]
         public float mass;

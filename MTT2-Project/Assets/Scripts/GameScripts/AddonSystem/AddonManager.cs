@@ -22,6 +22,7 @@ namespace MTT2.Addons
         public AddonLocator AddonLocator { get; private set; }
         public ChildLocator ChildLocator { get; private set; }
         public Vector2 AddonControl { get; set; }
+        public Vector2 MousePos { get; set; }
 
         private void Awake()
         {
@@ -36,6 +37,7 @@ namespace MTT2.Addons
                 if (!behaviourBase)
                     continue;
                 behaviourBase.AddonControl(AddonControl);
+                behaviourBase.MouseControl(MousePos);
             }
         }
 

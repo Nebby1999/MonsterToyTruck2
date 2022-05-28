@@ -1,0 +1,69 @@
+.bg{
+    min-width: 125px;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgb(0, 0, 0); 
+    border-left-color: rgb(255, 255, 255); 
+    border-right-color: rgb(255, 255, 255); 
+    border-top-color: rgb(255, 255, 255); 
+    border-bottom-color: rgb(255, 255, 255); 
+    border-left-width: 5px; 
+    border-right-width: 5px; 
+    border-top-width: 5px; 
+    border-bottom-width: 5px;
+}
+.container{
+    flex-direction: row; 
+    justify-content: center; 
+    width: 100%; 
+    height: 100%; 
+    align-items: center;
+}
+.fuel-container{
+    background-image: none; 
+    -unity-background-scale-mode: scale-to-fit; 
+    height: 80%; 
+    width: 10%; 
+    justify-content: space-between; 
+    flex-direction: column-reverse; 
+    margin-right: 15px;
+}
+.white{
+    font-size: 28px; 
+    color: rgb(255, 0, 0); 
+    -unity-font-style: bold;
+}
+.red{
+    font-size: 28px; 
+    color: rgb(255, 255, 255); 
+    -unity-font-style: bold;
+}
+#Fuelmeter{
+    background-color: rgba(0, 0, 0, 0); 
+    border-left-color: rgb(255, 255, 255); 
+    border-right-color: rgb(255, 255, 255); 
+    border-top-color: rgb(255, 255, 255); 
+    border-bottom-color: rgb(255, 255, 255); 
+    border-left-width: 2.5px; 
+    border-right-width: 2.5px; 
+    border-top-width: 2.5px; 
+    border-bottom-width: 2.5px; 
+    width: 25%; 
+    height: 80%; 
+    flex-direction: column-reverse; 
+    justify-content: space-between;
+}
+#FuelLevel{
+    max-height: 100%; 
+    min-height: 0; 
+    width: 100%; 
+    background-color: rgba(255, 224, 0, 255); 
+    height: 35%;
+}
+.txt{
+    -unity-text-align: upper-center; 
+    font-size: 32px; 
+    -unity-font-style: bold; 
+    color: rgb(255, 0, 0); 
+    height: 46px;
+}

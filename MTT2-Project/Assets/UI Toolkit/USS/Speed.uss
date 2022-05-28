@@ -1,0 +1,85 @@
+.bg{
+    width: 100%; 
+    height: 100%; 
+    align-items: center; 
+    justify-content: center; 
+    flex-direction: column; 
+    background-color: rgb(0, 0, 0); 
+    border-left-width: 5px; 
+    border-right-width: 5px; 
+    border-top-width: 5px; 
+    border-bottom-width: 5px; 
+    border-left-color: rgb(255, 255, 255); 
+    border-right-color: rgb(255, 255, 255); 
+    border-top-color: rgb(255, 255, 255); 
+    border-bottom-color: rgb(255, 255, 255); 
+    overflow: hidden;
+}
+.container{
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-around;
+}
+#SpeedCurrent{
+    font-size: 200px; 
+    -unity-font-definition: none; 
+    -unity-font: url("/Assets/Font/fntDS-DIGI.TTF"); 
+    padding-left: 0; 
+    padding-right: 0; 
+    padding-top: 0; 
+    padding-bottom: 0; 
+    width: 220px; 
+    height: 173px; 
+    color: rgb(255, 255, 255); 
+    margin-left: 0; 
+    margin-right: 0; 
+    margin-top: 0; 
+    margin-bottom: 0; 
+    -unity-font-style: normal; 
+    -unity-text-align: middle-center;
+}
+#MPH{
+    -unity-font: url("/Assets/Font/fntDS-DIGI.TTF"); 
+    -unity-font-definition: none; 
+    width: 86px; 
+    font-size: 55.45px; 
+    padding-left: 0; 
+    padding-right: 0; 
+    padding-top: 0; 
+    padding-bottom: 0; 
+    color: rgb(255, 255, 255); 
+    margin-left: 0; 
+    margin-right: 0; 
+    margin-top: 0; 
+    margin-bottom: 0;
+}
+#Meter{
+    background-image: url("/Assets/UI Toolkit/UIAssets/texHUDSpeedBar.png"); 
+    width: 100%; 
+    height: 20%; 
+    -unity-background-scale-mode: scale-to-fit; 
+    flex-direction: row-reverse; 
+    margin-left: 5px; 
+    margin-right: 5px; 
+    margin-top: 5px; 
+    margin-bottom: 5px; 
+    padding-left: 0; 
+    padding-right: 0; 
+    padding-top: 0; 
+    padding-bottom: 0; 
+    -unity-background-image-tint-color: rgba(0, 235, 255, 255);
+}
+#Lord{
+    width: 50px; 
+    height: 100%; 
+    max-width: 100%; 
+    min-width: 0; 
+    background-color: rgb(0, 0, 0); 
+    background-image: none; 
+    -unity-background-scale-mode: stretch-to-fill; 
+    -unity-slice-left: 0; 
+    -unity-slice-top: 0; 
+    -unity-slice-right: 0; 
+    -unity-slice-bottom: 0; 
+    -unity-background-image-tint-color: rgb(0, 231, 255);
+}

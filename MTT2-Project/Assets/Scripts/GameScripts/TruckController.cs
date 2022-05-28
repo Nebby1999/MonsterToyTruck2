@@ -29,39 +29,46 @@ namespace MTT2
         }
         [SerializeField]
         private TruckDef _truckDef;
-
+        public WheelDef WheelDef
+        {
+            get
+            {
+                return _wheelDef;
+            }
+            set
+            {
+                if(_wheelDef != value)
+                {
+                    _wheelDef = value;
+                    OnWheelDefChanged();
+                }
+            }
+        }
         [SerializeField]
-        private GameObject wheelPrefab;
+        private WheelDef _wheelDef;
+
         public List<WheelController> wheels = new List<WheelController>();
-        public SpriteRenderer spriteRenderer;
-        public float driveValue;
-        public float steerValue;
-        public bool breaking;
-        [Header("Fuel Data")]
+        public Transform frontWheel;
+        public Transform backWheel;
         public float fuel;
-        public float baseFuelConsumptionRate;
-        [Header("Motor Data")]
         public float baseSpeed;
-        public float fuelMultiplierCoefficient;
-        [Header("Other")]
         public float manouverability;
 
-        private bool _isRunning;
-        public Rigidbody2D RigidBody2d { get; private set; }
-        public ChildLocator ChildLocator { get; private set; }
 
+        private float baseFuelConsumptionRate;
+        private float fuelMultiplierCoefficient;
+        private bool _isRunning;
+
+        public Rigidbody2D RigidBody2d { get; private set; }
         public AddonManager AddonManager { get; private set; }
+        public float DriveValue { get; set; }
+        public float SteerValue { get; set; }
+        public bool Breaking { get; set; }
 
         private void Awake()
         {
             RigidBody2d = GetComponent<Rigidbody2D>();
-            ChildLocator = GetComponent<ChildLocator>();
             AddonManager = GetComponent<AddonManager>();
-            SpawnWheels();
-        }
-        private void Start()
-        {
-            OnTruckDefChanged();
         }
 
         private void FixedUpdate()
@@ -71,28 +78,7 @@ namespace MTT2
             {
                 MotorFixedUpdate();
             }
-            RigidBody2d.AddTorque(-steerValue * manouverability * Time.fixedDeltaTime);
-        }
-
-        public void SetWheelDef(WheelDef wheelDef)
-        {
-            foreach(WheelController controller in wheels)
-            {
-                controller.WheelDef = wheelDef;
-            }
-        }
-
-        private void SpawnWheels()
-        {
-            var wheelTransforms = new Transform[] {ChildLocator.FindChild("FrontWheel"), ChildLocator.FindChild("BackWheel")};
-            for(int i = 0; i < wheelTransforms.Length; i++)
-            {
-                var wheelControllerInstance = Instantiate(wheelPrefab, wheelTransforms[i], false).GetComponent<WheelController>();
-                var wheelJoint = wheelControllerInstance.GetComponent<WheelJoint2D>();
-                wheelJoint.connectedBody = RigidBody2d;
-                wheelJoint.connectedAnchor = wheelTransforms[i].localPosition;
-                wheels.Add(wheelControllerInstance);
-            }
+            RigidBody2d.AddTorque(-SteerValue * manouverability * Time.fixedDeltaTime);
         }
 
         private void OnTruckDefChanged()
@@ -100,11 +86,7 @@ namespace MTT2
             if (!_truckDef)
                 return;
 
-            if (spriteRenderer)
-                spriteRenderer.sprite = _truckDef.chasisSprite;
-
             RigidBody2d.mass = _truckDef.mass;
-            RigidBody2d.sharedMaterial = _truckDef.chasisMaterial;
 
             fuel = _truckDef.maxFuelBase;
             baseFuelConsumptionRate = _truckDef.baseFuelConsumptionRate;
@@ -113,10 +95,39 @@ namespace MTT2
             fuelMultiplierCoefficient = _truckDef.fuelDrivingCoefficient;
 
             manouverability = _truckDef.manouverability;
+        }
 
-            foreach(WheelController wheel in wheels)
+        private void OnWheelDefChanged()
+        {
+            if (!_wheelDef)
+                return;
+
+            foreach (Transform t in backWheel)
+                Destroy(t.gameObject);
+            foreach(Transform t in frontWheel)
+                Destroy (t.gameObject);
+
+            wheels.Clear();
+            SpawnWheels();
+        }
+
+        private void SpawnWheels()
+        {
+            var wheelTransforms = new Transform[] { frontWheel, backWheel };
+            for (int i = 0; i < wheelTransforms.Length; i++)
             {
-                wheel.GetComponent<WheelJoint2D>().SetSuspension(_truckDef.dampingRatio, _truckDef.frequency, _truckDef.angle);
+                var wheelControllerInstance = Instantiate(_wheelDef.wheelPrefab, wheelTransforms[i], false).GetComponent<WheelController>();
+                var wheelJoint = wheelControllerInstance.GetComponent<WheelJoint2D>();
+                wheelJoint.connectedBody = RigidBody2d;
+                wheelJoint.connectedAnchor = wheelTransforms[i].localPosition;
+                wheelJoint.SetSuspension(_truckDef.dampingRatio, _truckDef.frequency, _truckDef.angle);
+
+                wheelControllerInstance.maxAngularVelocity = _wheelDef.maxAngularVelocity;
+                wheelControllerInstance.RigidBody.mass = _wheelDef.wheelMass;
+                wheelControllerInstance.RigidBody.angularDrag = _wheelDef.angularDrag;
+                wheelControllerInstance.RigidBody.drag = _wheelDef.linearDrag;
+
+                wheels.Add(wheelControllerInstance);
             }
         }
 
@@ -125,20 +136,20 @@ namespace MTT2
             for(int i = 0; i < wheels.Count; i++)
             {
                 WheelController controller = wheels[i];
-                if(!breaking)
+                if(!Breaking)
                 {
-                    controller.RigidBody.AddTorque(baseSpeed * -driveValue * Time.fixedDeltaTime);
+                    controller.RigidBody.AddTorque(baseSpeed * -DriveValue * Time.fixedDeltaTime);
                 }
                 else
                 {
-                    controller.RigidBody.angularVelocity = controller.RigidBody.angularVelocity * controller.WheelDef.breakStrength;
+                    controller.RigidBody.angularVelocity = controller.RigidBody.angularVelocity * WheelDef.breakStrength;
                 }
             }
         }
 
         private void FuelFixedUpdate()
         {
-            var absDrive = Mathf.Abs(driveValue);
+            var absDrive = Mathf.Abs(DriveValue);
             var driveCoefficient = absDrive > 0 ? fuelMultiplierCoefficient * absDrive : 1;
 
             var finalCoefficient = driveCoefficient;

@@ -9,7 +9,7 @@ namespace MTT2.Addons
     {
         public TruckController TruckController { get; set; }
         public virtual void AddonControl(Vector2 controlInfo) { }
-
+        public virtual void MouseControl(Vector2 mousePos) { }
         public virtual void AddonTrigger(InputAction.CallbackContext context) { }
     }
 }
