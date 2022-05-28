@@ -47,8 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47afbedc7227f714f9f3772137d94447, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wheelDef: {fileID: 0}
-  spriteRenderer: {fileID: 918329095006196956}
   maxAngularVelocity: 0
 --- !u!50 &952061844055802712
 Rigidbody2D:
@@ -227,4 +225,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.6
+  m_Radius: 1.79
