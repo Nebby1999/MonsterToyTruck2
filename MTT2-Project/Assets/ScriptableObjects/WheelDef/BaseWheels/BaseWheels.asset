@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9244c09919e1d6546b122469aabd8833, type: 3}
   m_Name: BaseWheels
   m_EditorClassIdentifier: 
-  wheelSprite: {fileID: 0}
+  wheelSprite: {fileID: 21300000, guid: 6276a1bf7039f4846bb73144ed44bf6b, type: 3}
   physicsMaterial: {fileID: 6200000, guid: 5a95491dd2ee18f45b3fe421b90e9642, type: 2}
   breakStrength: 0.5
   maxAngularVelocity: 1000

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781a71e89172c1148a3b54770f1eeb59, type: 3}
   m_Name: BaseTruck
   m_EditorClassIdentifier: 
-  chasisSprite: {fileID: 0}
+  chasisSprite: {fileID: 21300000, guid: 4b94a06f5412e114db6d01885d599b40, type: 3}
   chasisMaterial: {fileID: 6200000, guid: fd9d0443fa03ba647b6678314c221c0d, type: 2}
   mass: 1
   maxFuelBase: 100
@@ -20,6 +20,8 @@ MonoBehaviour:
   baseSpeed: 200
   fuelDrivingCoefficient: 1
   manouverability: 1100
+  frontWheel: {x: 0, y: 0}
+  backWheel: {x: 0, y: 0}
   dampingRatio: 0.9
   frequency: 10
   angle: 90

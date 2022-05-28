@@ -18,4 +18,4 @@ MonoBehaviour:
     topAddon: {fileID: 0}
     bottomAddon: {fileID: 0}
     frontAddon: {fileID: 0}
-    backAddon: {fileID: 11400000, guid: 21d89c9ffc35fce4c9d9075dfb560e56, type: 2}
+    backAddon: {fileID: 0}

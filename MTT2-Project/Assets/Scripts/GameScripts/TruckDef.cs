@@ -25,6 +25,10 @@ namespace MTT2
         [Tooltip("How easy it is to rotate in this truck")]
         public float manouverability;
 
+        [Header("Wheel Joint Locations")]
+        public Vector2 frontWheel;
+        public Vector2 backWheel;
+
         [Header("Suspension")]
         public float dampingRatio;
         public float frequency;

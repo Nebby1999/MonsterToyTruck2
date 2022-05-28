@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace MTT2
 {
@@ -18,6 +19,29 @@ namespace MTT2
             suspension.frequency = frequency;
             suspension.angle = angle;
             joint2d.suspension = suspension;
+        }
+        public static void UpdateShapeToSprite(this PolygonCollider2D collider, Sprite sprite)
+        {
+            // ensure both valid
+            if (collider != null && sprite != null)
+            {
+                // update count
+                collider.pathCount = sprite.GetPhysicsShapeCount();
+
+                // new paths variable
+                List<Vector2> path = new List<Vector2>();
+
+                // loop path count
+                for (int i = 0; i < collider.pathCount; i++)
+                {
+                    // clear
+                    path.Clear();
+                    // get shape
+                    sprite.GetPhysicsShape(i, path);
+                    // set path
+                    collider.SetPath(i, path.ToArray());
+                }
+            }
         }
     }
 }

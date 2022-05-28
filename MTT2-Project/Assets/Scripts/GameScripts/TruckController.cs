@@ -101,7 +101,10 @@ namespace MTT2
                 return;
 
             if (spriteRenderer)
+            {
                 spriteRenderer.sprite = _truckDef.chasisSprite;
+                spriteRenderer.gameObject.GetComponent<PolygonCollider2D>().UpdateShapeToSprite(_truckDef.chasisSprite);
+            }
 
             RigidBody2d.mass = _truckDef.mass;
             RigidBody2d.sharedMaterial = _truckDef.chasisMaterial;

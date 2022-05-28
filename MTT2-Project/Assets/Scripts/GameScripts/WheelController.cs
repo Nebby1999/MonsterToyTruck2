@@ -50,7 +50,9 @@ namespace MTT2
             maxAngularVelocity = _wheelDef.maxAngularVelocity;
 
             if(spriteRenderer)
+            {
                 spriteRenderer.sprite = _wheelDef.wheelSprite;
+            }
 
             _rigidBody.mass = _wheelDef.wheelMass;
             _rigidBody.angularDrag = _wheelDef.angularDrag;
