@@ -37,7 +37,7 @@ namespace MTT2.Addons
                 if (!behaviourBase)
                     continue;
                 behaviourBase.AddonControl(AddonControl);
-                behaviourBase.MouseControl(MouseControl);
+                behaviourBase.MouseControl(MousePos);
             }
         }
 
