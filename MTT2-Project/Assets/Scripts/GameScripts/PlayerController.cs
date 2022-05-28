@@ -10,7 +10,6 @@ namespace MTT2
     {
         public static Action<PlayerController> OnPlayerStart;
         public PlayerPreferenceData playerPreferenceData;
-        public GameObject truckPrefab;
 
         public TruckController TruckController { get; private set; }
         public AddonManager AddonManager { get; private set; }
@@ -35,10 +34,10 @@ namespace MTT2
 
         public void SpawnPlayerTruck(Transform spawnPosition)
         {
-            var obj = Instantiate(truckPrefab, spawnPosition.position, Quaternion.Euler(Vector3.zero));
+            var obj = Instantiate(playerPreferenceData.truckDef.truckPrefab, spawnPosition.position, Quaternion.Euler(Vector3.zero));
             TruckController = obj.GetComponent<TruckController>();
             TruckController.TruckDef = playerPreferenceData.truckDef;
-            TruckController.SetWheelDef(playerPreferenceData.wheelDef);
+            TruckController.WheelDef = playerPreferenceData.wheelDef;
             AddonManager = TruckController.AddonManager;
 
             AddonManager.SpawnAddons(playerPreferenceData.addonSpawnData);
@@ -53,9 +52,9 @@ namespace MTT2
 
         private void TruckControllerFixedUpdate()
         {
-            TruckController.driveValue = _driveSteer.y;
-            TruckController.steerValue = _driveSteer.x;
-            TruckController.breaking = _breaking;
+            TruckController.DriveValue = _driveSteer.y;
+            TruckController.SteerValue = _driveSteer.x;
+            TruckController.Breaking = _breaking;
         }
 
         private void AddonManagerFixedUpdate()

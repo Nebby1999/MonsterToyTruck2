@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9244c09919e1d6546b122469aabd8833, type: 3}
+  m_Name: BlackWheels
+  m_EditorClassIdentifier: 
+  wheelPrefab: {fileID: 1446726443235927781, guid: 434ec3b55859d9e4db60d2da9f582d9a, type: 3}
+  breakStrength: 0.5
+  maxAngularVelocity: 1000
+  wheelMass: 1
+  linearDrag: 0
+  angularDrag: 0.05

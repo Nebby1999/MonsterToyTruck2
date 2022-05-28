@@ -74,15 +74,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8cf849f9a264bed4791272dbbadf754b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.15, y: 3.21}
+  m_Size: {x: 10.39, y: 2.68}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!60 &1226074653698555259
@@ -101,20 +101,110 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.15, y: 3.21}
+    newSize: {x: 10.39, y: 2.68}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
+    - - {x: 1.645, y: -1.4549999}
+      - {x: 1.7249999, y: -1.1949999}
+      - {x: 1.805, y: -1.045}
+      - {x: 1.905, y: -0.895}
+      - {x: 2.0249999, y: -0.775}
+      - {x: 2.205, y: -0.645}
+      - {x: 2.395, y: -0.555}
+      - {x: 2.5049999, y: -0.515}
+      - {x: 2.955, y: -0.42499998}
+      - {x: 3.085, y: -0.415}
+      - {x: 3.415, y: -0.405}
+      - {x: 3.425, y: -0.415}
+      - {x: 3.5749998, y: -0.42499998}
+      - {x: 3.8149998, y: -0.45499998}
+      - {x: 4.035, y: -0.49499997}
+      - {x: 4.185, y: -0.545}
+      - {x: 4.315, y: -0.615}
+      - {x: 4.515, y: -0.755}
+      - {x: 4.665, y: -0.905}
+      - {x: 4.795, y: -1.0649999}
+      - {x: 4.795, y: -1.1949999}
+      - {x: 4.785, y: -1.3349999}
+      - {x: 4.895, y: -1.365}
+      - {x: 4.9049997, y: -1.3249999}
+      - {x: 4.9049997, y: -1.105}
+      - {x: 4.9449997, y: -1.0749999}
+      - {x: 5.005, y: -0.955}
+      - {x: 5.045, y: -0.825}
+      - {x: 5.065, y: -0.615}
+      - {x: 5.075, y: -0.615}
+      - {x: 5.075, y: -0.445}
+      - {x: 4.9849997, y: -0.225}
+      - {x: 4.865, y: -0.035}
+      - {x: 4.745, y: 0.055}
+      - {x: 4.645, y: 0.065}
+      - {x: 4.355, y: 0.114999995}
+      - {x: 4.205, y: 0.13499999}
+      - {x: 3.735, y: 0.185}
+      - {x: 3.405, y: 0.21499999}
+      - {x: 3.235, y: 0.225}
+      - {x: 3.0249999, y: 0.235}
+      - {x: 2.7749999, y: 0.24499999}
+      - {x: 2.465, y: 0.255}
+      - {x: 1.8549999, y: 0.255}
+      - {x: 1.8349999, y: 0.315}
+      - {x: 1.505, y: 0.98499995}
+      - {x: 1.405, y: 1.175}
+      - {x: 1.265, y: 1.435}
+      - {x: 1.175, y: 1.495}
+      - {x: 0.955, y: 1.525}
+      - {x: 0.765, y: 1.545}
+      - {x: 0.305, y: 1.5749999}
+      - {x: 0.074999996, y: 1.5849999}
+      - {x: -0.225, y: 1.5949999}
+      - {x: -0.655, y: 1.5949999}
+      - {x: -0.66499996, y: 1.605}
+      - {x: -3.7849998, y: 1.605}
+      - {x: -4.085, y: 1.5949999}
+      - {x: -4.185, y: 1.5649999}
+      - {x: -4.325, y: 1.495}
+      - {x: -4.4449997, y: 1.385}
+      - {x: -4.485, y: 1.3149999}
+      - {x: -4.595, y: 0.715}
+      - {x: -4.6749997, y: 0.205}
+      - {x: -4.805, y: 0.065}
+      - {x: -4.955, y: -0.225}
+      - {x: -5.005, y: -0.42499998}
+      - {x: -5.045, y: -0.60499996}
+      - {x: -5.075, y: -0.79499996}
+      - {x: -5.075, y: -1.035}
+      - {x: -5.035, y: -1.045}
+      - {x: -4.935, y: -0.995}
+      - {x: -4.7149997, y: -0.835}
+      - {x: -4.455, y: -0.655}
+      - {x: -4.205, y: -0.515}
+      - {x: -3.995, y: -0.405}
+      - {x: -3.655, y: -0.275}
+      - {x: -3.395, y: -0.225}
+      - {x: -3.225, y: -0.205}
+      - {x: -3.0549998, y: -0.195}
+      - {x: -2.7749999, y: -0.24499999}
+      - {x: -2.575, y: -0.33499998}
+      - {x: -2.395, y: -0.445}
+      - {x: -2.175, y: -0.66499996}
+      - {x: -2.0149999, y: -0.91499996}
+      - {x: -1.915, y: -1.105}
+      - {x: -1.8149999, y: -1.375}
+      - {x: -1.765, y: -1.5649999}
+      - {x: -1.745, y: -1.5849999}
+      - {x: -1.3249999, y: -1.5949999}
+      - {x: -0.325, y: -1.5949999}
+      - {x: -0.315, y: -1.605}
+      - {x: 1.475, y: -1.605}
+      - {x: 1.505, y: -1.555}
+      - {x: 1.5849999, y: -1.515}
 --- !u!1 &1878152523965882002
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +229,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878152523965882002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: -1.566, y: 1.587, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -170,7 +260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127177371836365539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: -0.01, y: -1.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -201,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2914246994331242706}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: -4.8, y: 0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -218,12 +308,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5947343444304045389}
   - component: {fileID: 1567699420085931750}
-  - component: {fileID: 330053615304580889}
   - component: {fileID: 5101632612993759376}
   - component: {fileID: 8500951271507311331}
   - component: {fileID: -5486169608460979592}
   m_Layer: 0
-  m_Name: Truck
+  m_Name: OrangeTruck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -258,34 +347,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _truckDef: {fileID: 0}
-  wheelPrefab: {fileID: 1446726443235927781, guid: 434ec3b55859d9e4db60d2da9f582d9a, type: 3}
+  _wheelDef: {fileID: 0}
   wheels: []
-  spriteRenderer: {fileID: 3088413530332121966}
-  driveValue: 0
-  steerValue: 0
-  breaking: 0
+  frontWheel: {fileID: 9174525536486081358}
+  backWheel: {fileID: 6184440341740829169}
   fuel: 0
-  baseFuelConsumptionRate: 0
   baseSpeed: 0
-  fuelMultiplierCoefficient: 0
   manouverability: 0
---- !u!114 &330053615304580889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3319958538035206442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed714affb49690f4ab838440f51c7df8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _transformPairs:
-  - name: FrontWheel
-    tiedTransform: {fileID: 6184440341740829169}
-  - name: BackWheel
-    tiedTransform: {fileID: 9174525536486081358}
 --- !u!114 &5101632612993759376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3837505849645423137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -0.3, z: 0}
+  m_LocalPosition: {x: 3.25, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -390,7 +458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6091338333624117429}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.75, y: -0.3, z: 0}
+  m_LocalPosition: {x: -3.5, y: -2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -421,7 +489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6810681765844469996}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalPosition: {x: 5.05, y: -0.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
