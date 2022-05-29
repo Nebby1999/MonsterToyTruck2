@@ -3,9 +3,9 @@
     <ui:VisualElement name="Background" class="bg">
         <ui:Image name="Logo" />
         <ui:VisualElement name="UI-Container" class="container translate">
-            <ui:Label text="MAIN MENU" />
-            <ui:Button text="play" name="play" class="btn" />
-            <ui:Button text="exit" name="exit" class="btn" />
+            <ui:Label class="title" name="title" text="MAIN MENU" />
+            <ui:Button text="play" name="play" class="btn play" />
+            <ui:Button text="exit" name="exit" class="btn exit" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

@@ -36,6 +36,9 @@ Button:hover {
     border-color: grey;
     transition-duration: 1s;
 }
+.btn-back{
+    background-color: rgb(83, 96, 128);
+}
 .footer{
     width:100%;
     height:100%;
@@ -45,6 +48,9 @@ Button:hover {
     width:100%;
     height:100%;
     flex-direction: column;
+}
+.title{
+    font-size: 192px;
 }
 .rotateBL{
     transition-property: rotate;

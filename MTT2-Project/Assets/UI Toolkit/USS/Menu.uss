@@ -18,3 +18,9 @@
     align-items: center;
     border-left-width: 5px;
 }
+.play{
+    background-color: rgb(245, 225, 135);
+}
+.exit{
+    background-color: rgb(237, 85, 85);
+}

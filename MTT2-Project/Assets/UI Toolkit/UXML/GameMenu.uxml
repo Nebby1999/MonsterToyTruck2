@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/UI%20Toolkit/USS/GameMenu.uss?fileID=7433441132597879392&amp;guid=e70e00d47d1c19e4fbdb8bb8e98f7c65&amp;type=3#GameMenu" />
         <ui:VisualElement name="UI-Container" class="container">
             <ui:Button text="RESUME" display-tooltip-when-elided="true" name="resume" class="btn" />
-            <ui:Slider picking-mode="Ignore" value="42" high-value="100" name="Volume" label="VOLUME" class="slider" />
+            <!-- <ui:Slider picking-mode="Ignore" value="42" high-value="100" name="Volume" label="VOLUME" class="slider" /> -->
             <ui:Button text="RESTART" display-tooltip-when-elided="true" name="restart" class="btn" />
             <ui:Button text="EXIT GAME" display-tooltip-when-elided="true" name="exit" class="btn" />
         </ui:VisualElement>
