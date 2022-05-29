@@ -125,10 +125,6 @@ namespace MTT2
                 wheelJoint.connectedBody = wheelControllerInstance.RigidBody;
                 wheelJoint.anchor = wheelTransforms[i].localPosition - Vector3.up;
                 wheelJoint.SetSuspension(_truckDef.dampingRatio, _truckDef.frequency, _truckDef.angle);
-                //var wheelJoint = wheelControllerInstance.GetComponent<WheelJoint2D>();
-                //wheelJoint.connectedBody = RigidBody2d;
-                //wheelJoint.connectedAnchor = wheelTransforms[i].localPosition;
-                //wheelJoint.SetSuspension(_truckDef.dampingRatio, _truckDef.frequency, _truckDef.angle);
 
                 wheelControllerInstance.maxAngularVelocity = _wheelDef.maxAngularVelocity;
                 wheelControllerInstance.RigidBody.mass = _wheelDef.wheelMass;
