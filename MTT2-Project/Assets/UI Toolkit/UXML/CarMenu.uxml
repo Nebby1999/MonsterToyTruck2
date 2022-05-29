@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/UI%20Toolkit/USS/CarMenu.uss?fileID=7433441132597879392&amp;guid=659d67f4e7a766f47895c0b6a0cfaf67&amp;type=3#CarMenu" />
     <ui:VisualElement name="Background" class="bg">
         <ui:VisualElement name="UI-Container" class="container translate">
-            <ui:Label text="MODIFY UR CAR" />
+            <ui:Label name="car-title" text="MODIFY UR CAR" />
             <ui:Button name="add1" />
             <ui:Button name="add2" />
             <ui:Button name="add3" />
