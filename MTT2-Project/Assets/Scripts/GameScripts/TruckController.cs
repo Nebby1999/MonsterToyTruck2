@@ -114,13 +114,21 @@ namespace MTT2
         private void SpawnWheels()
         {
             var wheelTransforms = new Transform[] { frontWheel, backWheel };
+            var wheelJoints = GetComponents<WheelJoint2D>();
             for (int i = 0; i < wheelTransforms.Length; i++)
             {
-                var wheelControllerInstance = Instantiate(_wheelDef.wheelPrefab, wheelTransforms[i], false).GetComponent<WheelController>();
-                var wheelJoint = wheelControllerInstance.GetComponent<WheelJoint2D>();
-                wheelJoint.connectedBody = RigidBody2d;
-                wheelJoint.connectedAnchor = wheelTransforms[i].localPosition;
+                var wheel = Instantiate(_wheelDef.wheelPrefab, wheelTransforms[i], false);
+                wheel.transform.localPosition -= Vector3.up * 2;
+
+                var wheelControllerInstance = wheel.GetComponent<WheelController>();
+                var wheelJoint = wheelJoints[i];
+                wheelJoint.connectedBody = wheelControllerInstance.RigidBody;
+                wheelJoint.anchor = wheelTransforms[i].localPosition - Vector3.up;
                 wheelJoint.SetSuspension(_truckDef.dampingRatio, _truckDef.frequency, _truckDef.angle);
+                //var wheelJoint = wheelControllerInstance.GetComponent<WheelJoint2D>();
+                //wheelJoint.connectedBody = RigidBody2d;
+                //wheelJoint.connectedAnchor = wheelTransforms[i].localPosition;
+                //wheelJoint.SetSuspension(_truckDef.dampingRatio, _truckDef.frequency, _truckDef.angle);
 
                 wheelControllerInstance.maxAngularVelocity = _wheelDef.maxAngularVelocity;
                 wheelControllerInstance.RigidBody.mass = _wheelDef.wheelMass;

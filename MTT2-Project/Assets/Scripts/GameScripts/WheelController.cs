@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace MTT2
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(WheelJoint2D))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class WheelController : MonoBehaviour
     {
         public float maxAngularVelocity;
