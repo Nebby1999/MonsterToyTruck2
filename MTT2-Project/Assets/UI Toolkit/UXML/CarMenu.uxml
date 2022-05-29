@@ -3,15 +3,16 @@
     <ui:VisualElement name="Background" class="bg">
         <ui:VisualElement name="UI-Container" class="container translate">
             <ui:Label name="car-title" text="MODIFY UR CAR" />
-            <ui:Button name="truck" />
-            <ui:Button name="wheel" />
-            <ui:Button name="add1" />
-            <ui:Button name="add2" />
-            <ui:Button name="add3" />
-            <ui:Button name="add4" />
+            <ui:Button text="Truck" name="truck" />
+            <ui:Button text="Wheel" name="wheel" />
         </ui:VisualElement>
-        <ui:VisualElement name="Back-Container" class="back-container translate">
-            <ui:Button text="back" name="backcar" class="btn-back" />
+        <ui:VisualElement class="bg-container">
+            <ui:VisualElement name="Back-Container" class="back-container translate">
+                <ui:Button text="back" name="backcar" class="btn-back" />
+            </ui:VisualElement>
+            <ui:VisualElement name="Play-Container" class="play-container translate">
+                <ui:Button text="play" name="play-game" class="btn-play"/>
+            </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>

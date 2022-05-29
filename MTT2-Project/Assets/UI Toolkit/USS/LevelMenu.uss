@@ -24,7 +24,7 @@
 }
 
 .btn {
-    width: 20%;
+    width: 30%;
 }
 .btn-back{
     width: 60%;
@@ -34,7 +34,4 @@
 }
 .l2{
     background-color: rgb(116, 133, 242);
-}
-.l3{
-    background-color: rgb(242, 154, 116);
 }

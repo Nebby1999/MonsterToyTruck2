@@ -24,13 +24,7 @@ Button:hover {
     --unity-image: url('project://database/Assets/Resources/Images/Logo.png?fileID=21300000&guid=6cb8b0dfd33c9c4408804f93c3c31b4a&type=3#Logo') height 45%;
     width: 45%;
 }
-#UI-Container {
-    background-image: url('project://database/Assets/Resources/Images/paper.png?fileID=21300000&guid=9827ba31e865c9444a59b704804f9d36&type=3#paper');
-    -unity-background-scale-mode: scale-and-crop;
-    border-color: grey;
-    transition-duration: 1s;
-}
-#Back-Container {
+#UI-Container, #Back-Container, #Play-Container {
     background-image: url('project://database/Assets/Resources/Images/paper.png?fileID=21300000&guid=9827ba31e865c9444a59b704804f9d36&type=3#paper');
     -unity-background-scale-mode: scale-and-crop;
     border-color: grey;
@@ -111,6 +105,11 @@ Button:hover {
     transition-property: translate;
     transition-timing-function: ease;
     translate: -100% 100%;
+}
+.offsetBottomRight {
+    transition-property: translate;
+    transition-timing-function: ease;
+    translate: 100% 100%;
 }
 .offsetTopLeft {
     transition-property: translate;

@@ -5,7 +5,6 @@
             <ui:Label name="level-title" text="SELECT A LEVEL" />
             <ui:Button text="lvl 1" name="lvl1" class="btn l1" />
             <ui:Button text="lvl 2" name="lvl2" class="btn l2" />
-            <ui:Button text="lvl 3" name="lvl3" class="btn l3" />
         </ui:VisualElement>
         <ui:VisualElement name="Level-Container">
             <ui:Label display-tooltip-when-elided="true" name="Level-Label" />

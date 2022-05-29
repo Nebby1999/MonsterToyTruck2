@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using MTT2;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using MTT2.Addons;
 
 public class MenuManager : VisualElement
@@ -18,13 +19,9 @@ public class MenuManager : VisualElement
     Button b_exit;
     Button b_lvl1;
     Button b_lvl2;
-    Button b_lvl3;
     Button b_truck;
     Button b_wheel;
-    Button b_addon1;
-    Button b_addon2;
-    Button b_addon3;
-    Button b_addon4;
+    Button b_play_game;
     Button b_backLvl;
     Button b_backCar;
     #endregion
@@ -47,13 +44,9 @@ public class MenuManager : VisualElement
             b_exit = this.Q<Button>("exit");
             b_lvl1 = this.Q<Button>("lvl1");
             b_lvl2 = this.Q<Button>("lvl2");
-            b_lvl3 = this.Q<Button>("lvl3");
             b_truck = this.Q<Button>("truck");
             b_wheel = this.Q<Button>("wheel");
-            b_addon1 = this.Q<Button>("add1");
-            b_addon2 = this.Q<Button>("add2");
-            b_addon3 = this.Q<Button>("add3");
-            b_addon4 = this.Q<Button>("add4");
+            b_play_game = this.Q<Button>("play-game");
             b_backLvl = this.Q<Button>("backlvl");
             b_backCar = this.Q<Button>("backcar");
             #endregion
@@ -68,20 +61,18 @@ public class MenuManager : VisualElement
         b_play?.RegisterCallback<ClickEvent>(ev => PlayClicked());
         b_lvl1?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
         b_lvl2?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
-        b_lvl3?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
         b_backLvl?.RegisterCallback<ClickEvent>(ev => EnableHome());
         b_backCar?.RegisterCallback<ClickEvent>(ev => EnableLevelMenu());
         b_exit?.RegisterCallback<ClickEvent>(ev => UnityEditor.EditorApplication.isPlaying = false);
-        List<VisualElement> elmnts = new List<VisualElement> { b_truck, b_wheel, b_addon1, b_addon2, b_addon3, b_addon4 };
+        List<VisualElement> elmnts = new List<VisualElement> { b_truck, b_wheel};
         elmnts.ForEach(ve => ve.RegisterCallback<ClickEvent>(ChangeTruckElement));
+        // b_play_game?.RegisterCallback<ClickEvent>(ev => {SceneManager.LoadScene("Nombre Escena");});
         #endregion
         #region Mouse Events
         b_lvl1?.RegisterCallback<MouseEnterEvent>(ev => DisplayLevel(0));
         b_lvl1?.RegisterCallback<MouseLeaveEvent>(evt => DisplayLevel(-1));
         b_lvl2?.RegisterCallback<MouseEnterEvent>(evt => DisplayLevel(1));
         b_lvl2?.RegisterCallback<MouseLeaveEvent>(evt => DisplayLevel(-1));
-        b_lvl3?.RegisterCallback<MouseEnterEvent>(evt => DisplayLevel(2));
-        b_lvl3?.RegisterCallback<MouseLeaveEvent>(evt => DisplayLevel(-1));
         #endregion
 
         s_Main.Q<VisualElement>("Logo")?.RegisterCallback<TransitionEndEvent>(TransitionEndEvent => EnableLevelMenu());
@@ -170,6 +161,7 @@ public class MenuManager : VisualElement
         s_Car.style.display = DisplayStyle.Flex;
         s_Car.Q<VisualElement>("UI-Container").RemoveFromClassList("offsetUp");
         s_Car.Q<VisualElement>("Back-Container").RemoveFromClassList("offsetBottomLeft");
+        s_Car.Q<VisualElement>("Play-Container").RemoveFromClassList("offsetBottomRight");
         menuController.EnableContainer(true);
         
     }
@@ -186,6 +178,7 @@ public class MenuManager : VisualElement
 
         s_Car.Q<VisualElement>("UI-Container").AddToClassList("offsetUp");
         s_Car.Q<VisualElement>("Back-Container").AddToClassList("offsetBottomLeft");
+        s_Car.Q<VisualElement>("Play-Container").AddToClassList("offsetBottomRight");
     }
     // public void LvlClicked(){
     //     s_Level.Q<VisualElement>("UI-Container").AddToClassList("offsetUp");

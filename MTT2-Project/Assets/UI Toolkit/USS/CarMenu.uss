@@ -1,16 +1,22 @@
+.btn-play{
+    background-color: rgb(201, 56, 61);
+}
 .bg {
     height: 100%;
     width: 100%;
     justify-content: space-between;
     flex-direction: column;
 }
-
 .container {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     height: 200px;
     border-bottom-width: 5px;
+}
+.bg-container{
+    flex-direction: row;
+    justify-content: space-between;
 }
 .back-container{
     max-width: 300px;
@@ -21,4 +27,17 @@
     align-items: center;
     border-top-width: 5px;
     border-right-width: 5px;
+}
+.play-container{
+    max-width: 300px;
+    max-height: 300px;
+    min-width: 200px;
+    min-height: 200px;
+    justify-content: center;
+    align-items: center;
+    border-top-width: 5px;
+    border-left-width: 5px;
+}
+#truck, #wheel{
+    width: 20%;
 }
