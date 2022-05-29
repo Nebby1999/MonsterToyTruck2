@@ -5,6 +5,8 @@ namespace MTT2
     [CreateAssetMenu(menuName = "MonsterToyTruck2/WheelDef")]
     public class WheelDef : ScriptableObject
     {
+        [TextArea]
+        public string wheelName, wheelDescription;
         public GameObject wheelPrefab;
 
         [Range(0f, 1f)]

@@ -7,6 +7,10 @@
             <ui:Button text="lvl 2" name="lvl2" class="btn" />
             <ui:Button text="lvl 3" name="lvl3" class="btn" />
         </ui:VisualElement>
+        <ui:VisualElement name="Level-Container">
+            <ui:Label display-tooltip-when-elided="true" name="Level-Label" />
+            <ui:VisualElement name="Level-Texture" style="background-image: none; height: -30px;" />
+        </ui:VisualElement>
         <ui:VisualElement name="Back-Container" class="back-container translate">
             <ui:Button text="back" name="backlvl" class="btn-back" />
         </ui:VisualElement>

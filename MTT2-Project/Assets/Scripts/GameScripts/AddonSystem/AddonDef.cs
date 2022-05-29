@@ -8,7 +8,7 @@ namespace MTT2.Addons
     public class AddonDef : ScriptableObject
     {
         public GameObject addonPrefab;
-        public string addonName;
-        public string addonDescription;
+        [TextArea]
+        public string addonName, addonDescription;
     }
 }

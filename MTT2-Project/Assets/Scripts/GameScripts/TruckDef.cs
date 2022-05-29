@@ -5,6 +5,9 @@ namespace MTT2
     [CreateAssetMenu(menuName = "MonsterToyTruck2/TruckDef")]
     public class TruckDef : ScriptableObject
     {
+        [TextArea]
+        public string truckName, truckDescription;
+
         [Tooltip("The prefab tied to this TruckDef")]
         public GameObject truckPrefab;
 

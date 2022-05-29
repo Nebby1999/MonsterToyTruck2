@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3bb2da904bf2114ea1abd8c13a9194e, type: 3}
-  m_Name: New Player Preference Data
+  m_Name: DefaultPreference
   m_EditorClassIdentifier: 
   truckDef: {fileID: 11400000, guid: 8ebf3ef87cdf73040be8e4d3d9b4a5d8, type: 2}
   wheelDef: {fileID: 11400000, guid: d78199a0140ac8c4ab5d70657191cff9, type: 2}

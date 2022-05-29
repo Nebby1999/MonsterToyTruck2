@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: BlueTruck
   m_EditorClassIdentifier: 
   truckPrefab: {fileID: 3319958538035206442, guid: f878cccf6f1d4aa42a7a32e91cea8f9a, type: 3}
-  mass: 1
+  mass: 0.1
   maxFuelBase: 150
   baseFuelConsumptionRate: 1
-  baseSpeed: 200
+  baseSpeed: 1000
   fuelDrivingCoefficient: 1.1
   manouverability: 1100
-  dampingRatio: 0.9
-  frequency: 10
+  dampingRatio: 0.7
+  frequency: 2
   angle: 90
