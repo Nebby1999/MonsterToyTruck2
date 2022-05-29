@@ -2,8 +2,12 @@ using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 using MTT2;
+using System.Collections.Generic;
+using MTT2.Addons;
+
 public class MenuManager : VisualElement
 {
+    public MenuController menuController;
     #region Screens
     VisualElement s_Main;
     VisualElement s_Level;
@@ -15,6 +19,8 @@ public class MenuManager : VisualElement
     Button b_lvl1;
     Button b_lvl2;
     Button b_lvl3;
+    Button b_truck;
+    Button b_wheel;
     Button b_addon1;
     Button b_addon2;
     Button b_addon3;
@@ -42,6 +48,8 @@ public class MenuManager : VisualElement
             b_lvl1 = this.Q<Button>("lvl1");
             b_lvl2 = this.Q<Button>("lvl2");
             b_lvl3 = this.Q<Button>("lvl3");
+            b_truck = this.Q<Button>("truck");
+            b_wheel = this.Q<Button>("wheel");
             b_addon1 = this.Q<Button>("add1");
             b_addon2 = this.Q<Button>("add2");
             b_addon3 = this.Q<Button>("add3");
@@ -64,6 +72,8 @@ public class MenuManager : VisualElement
         b_backLvl?.RegisterCallback<ClickEvent>(ev => EnableHome());
         b_backCar?.RegisterCallback<ClickEvent>(ev => EnableLevelMenu());
         b_exit?.RegisterCallback<ClickEvent>(ev => UnityEditor.EditorApplication.isPlaying = false);
+        List<VisualElement> elmnts = new List<VisualElement> { b_truck, b_wheel, b_addon1, b_addon2, b_addon3, b_addon4 };
+        elmnts.ForEach(ve => ve.RegisterCallback<ClickEvent>(ChangeTruckElement));
         #endregion
         #region Mouse Events
         b_lvl1?.RegisterCallback<MouseEnterEvent>(ev => DisplayLevel(0));
@@ -117,18 +127,58 @@ public class MenuManager : VisualElement
         s_Level.Q<VisualElement>("UI-Container").RemoveFromClassList("offsetUp");
         s_Level.Q<VisualElement>("Back-Container").RemoveFromClassList("offsetBottomLeft");
     }
+    public void ChangeTruckElement(ClickEvent clickEvent)
+    {
+        VisualElement target = (VisualElement)clickEvent.target;
+        switch(target.name)
+        {
+            case "truck":
+                {
+                    menuController.TruckPreview.ChangeTruck();
+                    break;
+                }
+            case "wheel":
+                {
+                    menuController.TruckPreview.ChangeWheels();
+                    break;
+                }
+            case "add1":
+                {
+                    menuController.TruckPreview.ChangeAddon(AddonLocator.AddonLocation.Top);
+                    break;
+                }
+            case "add2":
+                {
+                    menuController.TruckPreview.ChangeAddon(AddonLocator.AddonLocation.Back);
+                    break;
+                }
+            case "add3":
+                {
+
+                    break;
+                }
+            case "add4":
+                {
+
+                    break;
+                }
+        }
+    }
     public void EnableCarMenu(){
         DisableAllScreens();
 
         s_Car.style.display = DisplayStyle.Flex;
         s_Car.Q<VisualElement>("UI-Container").RemoveFromClassList("offsetUp");
         s_Car.Q<VisualElement>("Back-Container").RemoveFromClassList("offsetBottomLeft");
+        menuController.EnableContainer(true);
+        
     }
     public void DisableAllScreens(){
         Transitions();
         s_Main.style.display = DisplayStyle.None;
         s_Level.style.display = DisplayStyle.None;
         s_Car.style.display = DisplayStyle.None;
+        menuController.EnableContainer(false);
     }
     void Transitions(){
         s_Level.Q<VisualElement>("UI-Container").AddToClassList("offsetUp");
