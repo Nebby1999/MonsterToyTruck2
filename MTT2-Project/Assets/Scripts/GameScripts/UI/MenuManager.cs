@@ -18,6 +18,7 @@ public class MenuManager : VisualElement
     Button b_addon1;
     Button b_addon2;
     Button b_addon3;
+    Button b_addon4;
     Button b_backLvl;
     Button b_backCar;
     #endregion
@@ -44,6 +45,7 @@ public class MenuManager : VisualElement
             b_addon1 = this.Q<Button>("add1");
             b_addon2 = this.Q<Button>("add2");
             b_addon3 = this.Q<Button>("add3");
+            b_addon4 = this.Q<Button>("add4");
             b_backLvl = this.Q<Button>("backlvl");
             b_backCar = this.Q<Button>("backcar");
             #endregion
@@ -57,17 +59,19 @@ public class MenuManager : VisualElement
         #region Click Events
         b_play?.RegisterCallback<ClickEvent>(ev => PlayClicked());
         b_lvl1?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
-        b_lvl1?.RegisterCallback<MouseEnterEvent>(ev => DisplayLevel(0));
-        b_lvl1?.RegisterCallback<MouseLeaveEvent>(evt => DisplayLevel(-1));
         b_lvl2?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
-        b_lvl2?.RegisterCallback<MouseEnterEvent>(evt => DisplayLevel(1));
-        b_lvl2?.RegisterCallback<MouseLeaveEvent>(evt => DisplayLevel(-1));
         b_lvl3?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
-        b_lvl3?.RegisterCallback<MouseEnterEvent>(evt => DisplayLevel(2));
-        b_lvl3?.RegisterCallback<MouseLeaveEvent>(evt => DisplayLevel(-1));
         b_backLvl?.RegisterCallback<ClickEvent>(ev => EnableHome());
         b_backCar?.RegisterCallback<ClickEvent>(ev => EnableLevelMenu());
         b_exit?.RegisterCallback<ClickEvent>(ev => UnityEditor.EditorApplication.isPlaying = false);
+        #endregion
+        #region Mouse Events
+        b_lvl1?.RegisterCallback<MouseEnterEvent>(ev => DisplayLevel(0));
+        b_lvl1?.RegisterCallback<MouseLeaveEvent>(evt => DisplayLevel(-1));
+        b_lvl2?.RegisterCallback<MouseEnterEvent>(evt => DisplayLevel(1));
+        b_lvl2?.RegisterCallback<MouseLeaveEvent>(evt => DisplayLevel(-1));
+        b_lvl3?.RegisterCallback<MouseEnterEvent>(evt => DisplayLevel(2));
+        b_lvl3?.RegisterCallback<MouseLeaveEvent>(evt => DisplayLevel(-1));
         #endregion
 
         s_Main.Q<VisualElement>("Logo")?.RegisterCallback<TransitionEndEvent>(TransitionEndEvent => EnableLevelMenu());
@@ -76,10 +80,6 @@ public class MenuManager : VisualElement
     public void PlayClicked(){
         s_Main.Q<VisualElement>("UI-Container").AddToClassList("offsetRight");
         s_Main.Q<VisualElement>("Logo").AddToClassList("fadeOut");
-    }
-    public void LvlClicked(){
-        s_Level.Q<VisualElement>("UI-Container").AddToClassList("offsetUp");
-        s_Level.Q<VisualElement>("Back-Container").AddToClassList("offsetBottomLeft");
     }
 
     public void DisplayLevel(int level)
@@ -101,10 +101,6 @@ public class MenuManager : VisualElement
         LevelDef levelDef = MTT2Application.Instance.levels[level];
         levelLabel.text = levelDef.levelName;
         levelIcon.style.backgroundImage = levelDef.levelIcon;
-    }
-    public void BackCarClicked(){
-        s_Car.Q<VisualElement>("UI-Container").AddToClassList("rotateTop");
-        s_Level.Q<VisualElement>("UI-Container").RemoveFromClassList("rotateTop");
     }
     public void EnableHome(){
         DisableAllScreens();
@@ -141,4 +137,12 @@ public class MenuManager : VisualElement
         s_Car.Q<VisualElement>("UI-Container").AddToClassList("offsetUp");
         s_Car.Q<VisualElement>("Back-Container").AddToClassList("offsetBottomLeft");
     }
+    // public void LvlClicked(){
+    //     s_Level.Q<VisualElement>("UI-Container").AddToClassList("offsetUp");
+    //     s_Level.Q<VisualElement>("Back-Container").AddToClassList("offsetBottomLeft");
+    // }
+    // public void BackCarClicked(){
+    //     s_Car.Q<VisualElement>("UI-Container").AddToClassList("rotateTop");
+    //     s_Level.Q<VisualElement>("UI-Container").RemoveFromClassList("rotateTop");
+    // }
 }

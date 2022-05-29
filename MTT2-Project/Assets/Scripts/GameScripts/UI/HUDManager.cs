@@ -36,15 +36,10 @@ public class HUDManager : VisualElement
     }
     private void OnGeometryChange(GeometryChangedEvent evt)
     {
-        
-        
         //Click Events
         b_pause?.RegisterCallback<ClickEvent>(ev => EnableMenu());
         b_resume?.RegisterCallback<ClickEvent>(ev => EnableHUD());
-        // b_lvl2?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
-        // b_lvl3?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
-        // b_exit?.RegisterCallback<ClickEvent>(ev => UnityEditor.EditorApplication.isPlaying = false);
-
+        
         UnregisterCallback<GeometryChangedEvent>(OnGeometryChange);
     }
     public void DisableAllScreens(){
@@ -55,14 +50,14 @@ public class HUDManager : VisualElement
         DisableAllScreens();
         b_pause.style.display = DisplayStyle.Flex;
 
-        isPlaying = true;
+        Time.timeScale = 1;
         s_HUD.style.display = DisplayStyle.Flex;
     }
     public void EnableMenu(){
         // DisableAllScreens();
         b_pause.style.display = DisplayStyle.None;
 
-        isPlaying = false;
+        Time.timeScale = 0;
         s_Menu.style.display = DisplayStyle.Flex;
     }
 }

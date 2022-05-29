@@ -6,6 +6,7 @@
             <ui:Button name="add1" />
             <ui:Button name="add2" />
             <ui:Button name="add3" />
+            <ui:Button name="add4" />
         </ui:VisualElement>
         <ui:VisualElement name="Back-Container" class="back-container translate">
             <Button text="back" name="backcar" class="btn-back"/>
