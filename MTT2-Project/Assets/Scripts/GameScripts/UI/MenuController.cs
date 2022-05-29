@@ -7,7 +7,7 @@ namespace MTT2
     public class MenuController : MonoBehaviour
     {
         public GameObject playerContainer;
-        // public TruckPreview TruckPreview => playerContainer.GetComponent<TruckPreview>();
+        public TruckPreview TruckPreview => playerContainer.GetComponent<TruckPreview>();
         VisualElement root;
         MenuManager m_manager;
         private void Awake()
