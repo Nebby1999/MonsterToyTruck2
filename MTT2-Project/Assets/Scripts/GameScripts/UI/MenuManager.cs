@@ -20,7 +20,7 @@ public class MenuManager : VisualElement
     Button b_backLvl;
     Button b_backCar;
     #endregion
-    enum CurrentMenu {Level, Car};
+    enum CurrentMenu {Main, Level, Car};
     CurrentMenu m_Menu;
     public new class UxmlFactory : UxmlFactory<MenuManager, UxmlTraits>{}
     public new class UxmlTraits : VisualElement.UxmlTraits{}
@@ -32,6 +32,7 @@ public class MenuManager : VisualElement
             s_Car = this.Q<VisualElement>("CarMenu");
             s_Level = this.Q<VisualElement>("LevelMenu");
             s_Main = this.Q<VisualElement>("Menu");
+            Transitions();
             #endregion
             #region ButtonSetter
             b_play = this.Q<Button>("play");
@@ -54,24 +55,24 @@ public class MenuManager : VisualElement
     {
         #region Click Events
         b_play?.RegisterCallback<ClickEvent>(ev => PlayClicked());
-        b_lvl1?.RegisterCallback<ClickEvent>(ev => LvlClicked());
-        b_lvl2?.RegisterCallback<ClickEvent>(ev => LvlClicked());
-        b_lvl3?.RegisterCallback<ClickEvent>(ev => LvlClicked());
+        b_lvl1?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
+        b_lvl2?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
+        b_lvl3?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
         b_backLvl?.RegisterCallback<ClickEvent>(ev => EnableHome());
-        b_backCar?.RegisterCallback<ClickEvent>(ev => BackCarClicked());
+        b_backCar?.RegisterCallback<ClickEvent>(ev => EnableLevelMenu());
         b_exit?.RegisterCallback<ClickEvent>(ev => UnityEditor.EditorApplication.isPlaying = false);
         #endregion
 
-        s_Main.Q<VisualElement>("Logo")?.RegisterCallback<TransitionEndEvent>(ev => EnableLevelMenu());
+        s_Main.Q<VisualElement>("Logo")?.RegisterCallback<TransitionEndEvent>(TransitionEndEvent => EnableLevelMenu());
         UnregisterCallback<GeometryChangedEvent>(OnGeometryChange);
     }
     public void PlayClicked(){
-        s_Main.Q<VisualElement>("UI-Container").AddToClassList("rotateBRight");
+        s_Main.Q<VisualElement>("UI-Container").AddToClassList("offsetRight");
         s_Main.Q<VisualElement>("Logo").AddToClassList("fadeOut");
     }
     public void LvlClicked(){
-        s_Level.Q<VisualElement>("UI-Container").AddToClassList("rotateTop");
-        s_Car.Q<VisualElement>("UI-Container").RemoveFromClassList("rotateTop");
+        s_Level.Q<VisualElement>("UI-Container").AddToClassList("offsetUp");
+        s_Level.Q<VisualElement>("Back-Container").AddToClassList("offsetBottomLeft");
     }
     public void BackCarClicked(){
         s_Car.Q<VisualElement>("UI-Container").AddToClassList("rotateTop");
@@ -81,7 +82,7 @@ public class MenuManager : VisualElement
         DisableAllScreens();
 
         s_Main.style.display = DisplayStyle.Flex;
-        s_Main.Q<VisualElement>("UI-Container").RemoveFromClassList("rotateBRight");
+        s_Main.Q<VisualElement>("UI-Container").RemoveFromClassList("offsetRight");
         s_Main.Q<VisualElement>("Logo").RemoveFromClassList("fadeOut");
 
     }
@@ -89,15 +90,27 @@ public class MenuManager : VisualElement
         DisableAllScreens();
 
         s_Level.style.display = DisplayStyle.Flex;
+        s_Level.Q<VisualElement>("UI-Container").RemoveFromClassList("offsetUp");
+        s_Level.Q<VisualElement>("Back-Container").RemoveFromClassList("offsetBottomLeft");
     }
     public void EnableCarMenu(){
         DisableAllScreens();
 
         s_Car.style.display = DisplayStyle.Flex;
+        s_Car.Q<VisualElement>("UI-Container").RemoveFromClassList("offsetUp");
+        s_Car.Q<VisualElement>("Back-Container").RemoveFromClassList("offsetBottomLeft");
     }
     public void DisableAllScreens(){
+        Transitions();
         s_Main.style.display = DisplayStyle.None;
         s_Level.style.display = DisplayStyle.None;
         s_Car.style.display = DisplayStyle.None;
+    }
+    void Transitions(){
+        s_Level.Q<VisualElement>("UI-Container").AddToClassList("offsetUp");
+        s_Level.Q<VisualElement>("Back-Container").AddToClassList("offsetBottomLeft");
+
+        s_Car.Q<VisualElement>("UI-Container").AddToClassList("offsetUp");
+        s_Car.Q<VisualElement>("Back-Container").AddToClassList("offsetBottomLeft");
     }
 }

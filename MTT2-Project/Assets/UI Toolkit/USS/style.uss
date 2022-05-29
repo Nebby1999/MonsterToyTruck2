@@ -30,6 +30,12 @@ Button:hover {
     border-color: grey;
     transition-duration: 1s;
 }
+#Back-Container {
+    background-image: url('project://database/Assets/Resources/Images/paper.png?fileID=21300000&guid=9827ba31e865c9444a59b704804f9d36&type=3#paper');
+    -unity-background-scale-mode: scale-and-crop;
+    border-color: grey;
+    transition-duration: 1s;
+}
 .footer{
     width:100%;
     height:100%;
@@ -60,6 +66,10 @@ Button:hover {
     transition-property: rotate;
     transform-origin: top center;
 }
+.translate{
+    transition-property: translate;
+    translate: 0% 0%;
+}
 .rotateBRight {
     border-width: 5px;
     transform-origin: bottom right;
@@ -80,6 +90,36 @@ Button:hover {
     transition-property: rotate;
     transition-timing-function: linear;
     rotate: 180deg; 
+}
+.offsetRight {
+    transition-property: translate;
+    transition-timing-function: ease;
+    translate: 100% 0%;
+}
+.offsetLeft {
+    transition-property: translate;
+    transition-timing-function: ease;
+    translate: -100% 0%;
+}
+.offsetBottomLeft {
+    transition-property: translate;
+    transition-timing-function: ease;
+    translate: -100% 100%;
+}
+.offsetTopLeft {
+    transition-property: translate;
+    transition-timing-function: ease;
+    translate: -100% -100%;
+}
+.offsetUp{
+    transition-property: translate;
+    transition-timing-function: ease;
+    translate: 0% -100%;
+}
+.offsetDown{
+    transition-property: translate;
+    transition-timing-function: ease;
+    translate: 0% 100%;
 }
 .fadeOut{
     transition-property: opacity;
