@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/UI%20Toolkit/USS/Menu.uss?fileID=7433441132597879392&amp;guid=2fcdba9ba32cf75478f17ee27a360df6&amp;type=3#Menu" />
     <ui:VisualElement name="Background" class="bg">
         <ui:Image name="Logo" />
-        <ui:VisualElement name="UI-Container" class="container">
+        <ui:VisualElement name="UI-Container" class="container rotateTR">
             <ui:Label text="MAIN MENU" />
             <ui:Button text="play" name="play" class="btn" />
             <ui:Button text="exit" name="exit" class="btn" />

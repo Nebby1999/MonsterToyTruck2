@@ -20,7 +20,8 @@ public class MenuManager : VisualElement
     Button b_backLvl;
     Button b_backCar;
     #endregion
-
+    enum CurrentMenu {Level, Car};
+    CurrentMenu m_Menu;
     public new class UxmlFactory : UxmlFactory<MenuManager, UxmlTraits>{}
     public new class UxmlTraits : VisualElement.UxmlTraits{}
     public MenuManager(){
@@ -53,27 +54,36 @@ public class MenuManager : VisualElement
     {
         #region Click Events
         b_play?.RegisterCallback<ClickEvent>(ev => PlayClicked());
-        b_lvl1?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
-        b_lvl2?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
-        b_lvl3?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
+        b_lvl1?.RegisterCallback<ClickEvent>(ev => LvlClicked());
+        b_lvl2?.RegisterCallback<ClickEvent>(ev => LvlClicked());
+        b_lvl3?.RegisterCallback<ClickEvent>(ev => LvlClicked());
         b_backLvl?.RegisterCallback<ClickEvent>(ev => EnableHome());
-        b_backCar?.RegisterCallback<ClickEvent>(ev => EnableLevelMenu());
+        b_backCar?.RegisterCallback<ClickEvent>(ev => BackCarClicked());
         b_exit?.RegisterCallback<ClickEvent>(ev => UnityEditor.EditorApplication.isPlaying = false);
         #endregion
-        #region Transition Events
-        s_Main?.RegisterCallback<TransitionEndEvent>(ev => EnableLevelMenu());
-        #endregion
 
+        s_Main.Q<VisualElement>("Logo")?.RegisterCallback<TransitionEndEvent>(ev => EnableLevelMenu());
         UnregisterCallback<GeometryChangedEvent>(OnGeometryChange);
     }
     public void PlayClicked(){
         s_Main.Q<VisualElement>("UI-Container").AddToClassList("rotateBRight");
         s_Main.Q<VisualElement>("Logo").AddToClassList("fadeOut");
     }
+    public void LvlClicked(){
+        s_Level.Q<VisualElement>("UI-Container").AddToClassList("rotateTop");
+        s_Car.Q<VisualElement>("UI-Container").RemoveFromClassList("rotateTop");
+    }
+    public void BackCarClicked(){
+        s_Car.Q<VisualElement>("UI-Container").AddToClassList("rotateTop");
+        s_Level.Q<VisualElement>("UI-Container").RemoveFromClassList("rotateTop");
+    }
     public void EnableHome(){
         DisableAllScreens();
 
         s_Main.style.display = DisplayStyle.Flex;
+        s_Main.Q<VisualElement>("UI-Container").RemoveFromClassList("rotateBRight");
+        s_Main.Q<VisualElement>("Logo").RemoveFromClassList("fadeOut");
+
     }
     public void EnableLevelMenu(){
         DisableAllScreens();

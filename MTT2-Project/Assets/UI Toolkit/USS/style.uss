@@ -15,11 +15,6 @@ Button {
 }
 Button:hover {
     -unity-font-style: bold;
-    /* transition-property: rotate;
-    transition-duration: 500ms;
-    transition-delay: 20ms;
-    transition-timing-function: linear;
-    rotate: 17.5deg; */
 }
 #Background {
     height: 1080px;
@@ -33,6 +28,7 @@ Button:hover {
     background-image: url('project://database/Assets/Resources/Images/paper.png?fileID=21300000&guid=9827ba31e865c9444a59b704804f9d36&type=3#paper');
     -unity-background-scale-mode: scale-and-crop;
     border-color: grey;
+    transition-duration: 1s;
 }
 .footer{
     width:100%;
@@ -44,12 +40,30 @@ Button:hover {
     height:100%;
     flex-direction: column;
 }
+.rotateBL{
+    transition-property: rotate;
+    transform-origin: bottom left;
+}
+.rotateBR{
+    transition-property: rotate;
+    transform-origin: bottom right;
+}
+.rotateTL{
+    transition-property: rotate;
+    transform-origin: top left;
+}
+.rotateTR{
+    transition-property: rotate;
+    transform-origin: top right;
+}
+.rotateT{
+    transition-property: rotate;
+    transform-origin: top center;
+}
 .rotateBRight {
     border-width: 5px;
     transform-origin: bottom right;
     transition-property: rotate;
-    transition-duration: .5s;
-    transition-delay: 0ms;
     transition-timing-function: linear;
     rotate: 90deg;
 }
@@ -57,15 +71,19 @@ Button:hover {
     border-width: 5px;
     transform-origin: bottom left;
     transition-property: rotate;
-    transition-duration: .5s;
-    transition-delay: 0ms;
     transition-timing-function: linear;
     rotate: -90deg; 
 }
+.rotateTop {
+    border-width: 5px;
+    transform-origin: top center;
+    transition-property: rotate;
+    transition-timing-function: linear;
+    rotate: 180deg; 
+}
 .fadeOut{
     transition-property: opacity;
-    transition-duration: .5s;
-    transition-delay: 0ms;
     transition-timing-function: linear;
+    transition-duration: 1s;
     opacity: 0%;
 }
