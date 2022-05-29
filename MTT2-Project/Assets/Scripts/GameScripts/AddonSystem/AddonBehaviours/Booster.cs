@@ -30,7 +30,7 @@ namespace MTT2.Addons
             CalculateCoefficient();
             if(value)
             {
-                TruckController.RigidBody2d.AddForceAtPosition(Vector2.right * coefficient, transform.position, ForceMode2D.Impulse);
+                TruckController.RigidBody2d.AddForceAtPosition(TruckController.transform.right * coefficient, transform.position, ForceMode2D.Impulse);
             }
             spriteRenderer.sprite = value ? on : off;
         }
