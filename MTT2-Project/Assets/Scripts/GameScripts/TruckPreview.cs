@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MTT2.Addons;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,7 @@ namespace MTT2
             truckController = truck.GetComponent<TruckController>();
             truckController.TruckDef = prefData.truckDef;
             truckController.WheelDef = prefData.wheelDef;
+            truckController.AddonManager.SpawnAddons(prefData.addonSpawnData);
         }
 
         public void ChangeWheels()
@@ -37,6 +39,10 @@ namespace MTT2
             MTT2Application.Instance.GetNextTruckDef();
             Destroy(truck);
             SpawnTruck();
+        }
+
+        public void ChangeAddon(AddonLocator.AddonLocation location)
+        {
         }
 
         public void OnDisable()

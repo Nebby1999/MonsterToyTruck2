@@ -22,6 +22,9 @@ namespace MTT2.Addons
 
         private void Update()
         {
+            if (!CameraController.Instance)
+                return;
+
             Vector2 direction = CameraController.Instance.Camera.ScreenToWorldPoint(mousePos) - pivot.position;
             angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             pivot.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
