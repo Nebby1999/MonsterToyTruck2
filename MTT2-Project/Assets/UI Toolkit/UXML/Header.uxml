@@ -2,15 +2,13 @@
     <ui:Template name="Fuel" src="project://database/Assets/UI%20Toolkit/UXML/Fuel.uxml?fileID=9197481963319205126&amp;guid=4f8ae838285b23840b818b66da67448a&amp;type=3#Fuel" />
     <ui:Template name="Speed" src="project://database/Assets/UI%20Toolkit/UXML/Speed.uxml?fileID=9197481963319205126&amp;guid=ae0043f2eb6ed6045887143dab3e3a8e&amp;type=3#Speed" />
     <Style src="../USS/Header.uss"/>
-    <ui:VisualElement name="Background" class="bg">
+    <ui:VisualElement class="bg">
         <ui:VisualElement name="UI-Container" class="container">
             <ui:VisualElement name="Meter-Container">
                 <ui:Instance template="Fuel" name="Fuel"/>
                 <ui:Instance template="Speed" name="Speed"/>
             </ui:VisualElement>
-            <ui:VisualElement name="Pause-Container" focusable="true" >
-                <ui:Button text="PAUSE" display-tooltip-when-elided="true" name="pause" class="btn" />
-            </ui:VisualElement>
+            <ui:Button text="PAUSE" display-tooltip-when-elided="true" name="pause" class="btn" />
         </ui:VisualElement>
     </ui:VisualElement>
 

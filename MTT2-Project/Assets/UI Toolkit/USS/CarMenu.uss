@@ -1,6 +1,8 @@
 .bg {
     height: 100%;
     width: 100%;
+    justify-content: space-between;
+    flex-direction: column-reverse;
 }
 
 .container {
@@ -8,5 +10,15 @@
     justify-content: space-around;
     align-items: center;
     height: 200px;
+    border-top-width: 5px;
+}
+.back-container{
+    max-width: 300px;
+    max-height: 300px;
+    min-width: 200px;
+    min-height: 200px;
+    justify-content: center;
+    align-items: center;
     border-bottom-width: 5px;
+    border-right-width: 5px;
 }

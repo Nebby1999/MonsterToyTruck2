@@ -14,6 +14,7 @@ namespace MTT2.HUD
         #region UI
         HUDManager m_manager;
         private Label speedMeter;
+        private VisualElement speedBar;
         private VisualElement fuelMeter;
         private VisualElement speedSymbol;
         private Slider playerPos;
@@ -32,8 +33,9 @@ namespace MTT2.HUD
             m_manager = root.Q<HUDManager>("Manager");
 
             speedMeter = root.Q<Label>("SpeedCurrent");
-            fuelMeter = root.Q("FuelLevel");
-            speedSymbol = root.Q("Lord");
+            fuelMeter = root.Q<VisualElement>("FuelLevel");
+            speedBar = root.Q<VisualElement>("Meter");
+            speedSymbol = root.Q<VisualElement>("Lord");
             playerPos = root.Q<Slider>("Slider");
         }
 
@@ -44,12 +46,34 @@ namespace MTT2.HUD
         }
         void Header()
         {
+            SpeedMeterStyle();
+            FuelMeterStyle();
+        }
+        void SpeedMeterStyle(){
             var rigidBody = playerController.TruckController.RigidBody2d;
 
-            speedMeter.text = Mathf.Abs(rigidBody.velocity.x * 10).ToString("00");
-            speedSymbol.style.width = new StyleLength(Length.Percent(InversePercentage(rigidBody.velocity.x, 10)));
-            
+            speedMeter.text = Mathf.Abs(rigidBody.velocity.x * 10).ToString("000");
+            speedSymbol.style.width = new StyleLength(Length.Percent(InversePercentage(rigidBody.velocity.x, 15)));
+            if(rigidBody.velocity.x >= 15){
+                speedBar.style.unityBackgroundImageTintColor = Color.red;
+                speedMeter.style.color = Color.red;
+                }
+            else if (rigidBody.velocity.x <= 15 && rigidBody.velocity.x >= 0 ){
+                speedBar.style.unityBackgroundImageTintColor = Color.cyan;
+                speedMeter.style.color = Color.white;
+                }
+            else if (rigidBody.velocity.x < -0.1){
+                speedMeter.style.color = Color.yellow;
+                }
+        }
+        void FuelMeterStyle(){
             fuelMeter.style.height = new StyleLength(Length.Percent(Percentage(playerController.TruckController.fuel, playerController.TruckController.TruckDef.maxFuelBase)));
+            if(Percentage(playerController.TruckController.fuel, playerController.TruckController.TruckDef.maxFuelBase) >= 50)
+                fuelMeter.style.backgroundColor = Color.white;
+            else if(Percentage(playerController.TruckController.fuel, playerController.TruckController.TruckDef.maxFuelBase) <= 50 && Percentage(playerController.TruckController.fuel, playerController.TruckController.TruckDef.maxFuelBase) >= 25)
+                fuelMeter.style.backgroundColor = Color.yellow;
+            else if(Percentage(playerController.TruckController.fuel, playerController.TruckController.TruckDef.maxFuelBase) <= 25)
+                fuelMeter.style.backgroundColor = Color.red;
         }
         void Footer()
         {

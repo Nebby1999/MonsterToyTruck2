@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
     <Style src="project://database/Assets/UI%20Toolkit/USS/Silder.uss?fileID=7433441132597879392&amp;guid=be2022cd1d0b5c349bc69e113f06a05e&amp;type=3#Silder" />
-    <ui:VisualElement name="Background" class="bg">
+    <ui:VisualElement class="bg">
         <ui:Slider picking-mode="Ignore" high-value="100" name="Slider" class="slider"/>
     </ui:VisualElement>
 </ui:UXML>

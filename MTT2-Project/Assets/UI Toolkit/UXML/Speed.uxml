@@ -1,8 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
 <Style src="../USS/Speed.uss"/>
-    <ui:VisualElement name="Background" class="bg">
+    <ui:VisualElement class="bg">
         <ui:VisualElement class="container">
-            <ui:Label text="88" display-tooltip-when-elided="true" name="SpeedCurrent" />
+            <ui:Label text="888" display-tooltip-when-elided="true" name="SpeedCurrent" />
             <ui:Label text="MPH" display-tooltip-when-elided="true" name="MPH" />
         </ui:VisualElement>
         <ui:VisualElement name="Meter" >

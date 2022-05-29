@@ -21,7 +21,7 @@
     justify-content: space-around;
 }
 #SpeedCurrent{
-    font-size: 200px; 
+    font-size: 150px; 
     -unity-font-definition: none; 
     -unity-font: url("/Assets/Font/fntDS-DIGI.TTF"); 
     padding-left: 0; 

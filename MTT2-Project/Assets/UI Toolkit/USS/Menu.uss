@@ -2,6 +2,7 @@
     width: 90%;
     height: 33%;
 }
+
 .bg {
     justify-content: space-between;
     padding-left: 2.5%;

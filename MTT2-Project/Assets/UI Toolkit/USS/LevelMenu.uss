@@ -1,6 +1,18 @@
 .bg {
     height: 100%;
     width: 100%;
+    justify-content: space-between;
+}
+
+.back-container{
+    max-width: 300px;
+    max-height: 300px;
+    min-width: 200px;
+    min-height: 200px;
+    justify-content: center;
+    align-items: center;
+    border-top-width: 5px;
+    border-right-width: 5px;
 }
 
 .container {
@@ -13,4 +25,7 @@
 
 .btn {
     width: 20%;
+}
+.btn-back{
+    width: 60%;
 }
