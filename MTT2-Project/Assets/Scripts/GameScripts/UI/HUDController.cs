@@ -7,10 +7,6 @@ namespace MTT2.HUD
 {
     public class HUDController : MonoBehaviour
     {
-        #region Classes
-        public SceneController sceneController;
-        public PlayerController playerController;
-        #endregion
         #region UI
         HUDManager m_manager;
         private Label speedMeter;
@@ -50,7 +46,7 @@ namespace MTT2.HUD
             FuelMeterStyle();
         }
         void SpeedMeterStyle(){
-            var rigidBody = playerController.TruckController.RigidBody2d;
+            var rigidBody = PlayerController.Instance.TruckController.RigidBody2d;
 
             speedMeter.text = Mathf.Abs(rigidBody.velocity.x * 10).ToString("000");
             speedSymbol.style.width = new StyleLength(Length.Percent(InversePercentage(rigidBody.velocity.x, 15)));
@@ -67,12 +63,12 @@ namespace MTT2.HUD
                 }
         }
         void FuelMeterStyle(){
-            fuelMeter.style.height = new StyleLength(Length.Percent(Percentage(playerController.TruckController.fuel, playerController.TruckController.TruckDef.maxFuelBase)));
-            if(Percentage(playerController.TruckController.fuel, playerController.TruckController.TruckDef.maxFuelBase) >= 50)
+            fuelMeter.style.height = new StyleLength(Length.Percent(Percentage(PlayerController.Instance.TruckController.fuel, PlayerController.Instance.TruckController.TruckDef.maxFuelBase)));
+            if(Percentage(PlayerController.Instance.TruckController.fuel, PlayerController.Instance.TruckController.TruckDef.maxFuelBase) >= 50)
                 fuelMeter.style.backgroundColor = Color.white;
-            else if(Percentage(playerController.TruckController.fuel, playerController.TruckController.TruckDef.maxFuelBase) <= 50 && Percentage(playerController.TruckController.fuel, playerController.TruckController.TruckDef.maxFuelBase) >= 25)
+            else if(Percentage(PlayerController.Instance.TruckController.fuel, PlayerController.Instance.TruckController.TruckDef.maxFuelBase) <= 50 && Percentage(PlayerController.Instance.TruckController.fuel, PlayerController.Instance.TruckController.TruckDef.maxFuelBase) >= 25)
                 fuelMeter.style.backgroundColor = Color.yellow;
-            else if(Percentage(playerController.TruckController.fuel, playerController.TruckController.TruckDef.maxFuelBase) <= 25)
+            else if(Percentage(PlayerController.Instance.TruckController.fuel, PlayerController.Instance.TruckController.TruckDef.maxFuelBase) <= 25)
                 fuelMeter.style.backgroundColor = Color.red;
         }
         void Footer()
@@ -81,8 +77,8 @@ namespace MTT2.HUD
         }
         void PlayerPositionHUD()
         {
-            float lvlSize = Vector3.Distance(sceneController.spawnPoint.position, sceneController.finishLine.position);
-            float inLvlPos = Vector3.Distance(playerController.TruckController.transform.position, sceneController.finishLine.position);
+            float lvlSize = Vector3.Distance(SceneController.Instance.spawnPoint.position, SceneController.Instance.finishLine.position);
+            float inLvlPos = Vector3.Distance(PlayerController.Instance.TruckController.transform.position, SceneController.Instance.finishLine.position);
             playerPos.value = InversePercentage(inLvlPos, lvlSize);
         }
         private static float Percentage(float current, float max)

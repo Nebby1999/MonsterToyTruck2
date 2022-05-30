@@ -40,8 +40,13 @@ public class HUDManager : VisualElement
         //Click Events
         b_pause?.RegisterCallback<ClickEvent>(ev => EnableMenu());
         b_resume?.RegisterCallback<ClickEvent>(ev => EnableHUD());
-        b_restart?.RegisterCallback<ClickEvent>(ev => {SceneManager.LoadScene(SceneManager.GetActiveScene().name);});
-        b_exit?.RegisterCallback<ClickEvent>(ev => {SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name); SceneManager.LoadScene("Menu");});
+        b_restart?.RegisterCallback<ClickEvent>(ev => MTT2.MTT2Application.Instance.RestartLevel());
+        b_exit?.RegisterCallback<ClickEvent>(ev =>
+        {
+            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("Menu");
+            UnityEngine.Object.Destroy(MTT2.PlayerController.Instance.gameObject);
+        });
         UnregisterCallback<GeometryChangedEvent>(OnGeometryChange);
     }
     public void DisableAllScreens(){

@@ -3,11 +3,13 @@ using Nebby.UnityUtils;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace MTT2
 {
     public class PlayerController : SingletonBehaviour<PlayerController>
     {
+        public override bool DestroyIfDuplicate => true;
         public static Action<PlayerController> OnPlayerStart;
         public PlayerPreferenceData playerPreferenceData;
 
@@ -19,8 +21,17 @@ namespace MTT2
         private Vector2 _addonControl;
         private Vector2 _mouse;
 
+        public void Respawn(Scene scene, LoadSceneMode mode)
+        {
+            if (scene.name == "TutorialLevel" || scene.name == "Stage1")
+            {
+                SceneManager.sceneLoaded -= Respawn;
+                Start();
+            }
+        }
         public void Start()
         {
+            SceneManager.sceneLoaded += Respawn;
             SpawnPlayerTruck();
             OnPlayerStart?.Invoke(this);
         }

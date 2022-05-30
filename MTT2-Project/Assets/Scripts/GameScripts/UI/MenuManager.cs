@@ -5,6 +5,7 @@ using MTT2;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using MTT2.Addons;
+using System.Globalization;
 
 public class MenuManager : VisualElement
 {
@@ -59,14 +60,14 @@ public class MenuManager : VisualElement
     {
         #region Click Events
         b_play?.RegisterCallback<ClickEvent>(ev => PlayClicked());
-        b_lvl1?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
-        b_lvl2?.RegisterCallback<ClickEvent>(ev => EnableCarMenu());
+        b_lvl1?.RegisterCallback<ClickEvent>(EnableCarMenu);
+        b_lvl2?.RegisterCallback<ClickEvent>(EnableCarMenu);
         b_backLvl?.RegisterCallback<ClickEvent>(ev => EnableHome());
         b_backCar?.RegisterCallback<ClickEvent>(ev => EnableLevelMenu());
         b_exit?.RegisterCallback<ClickEvent>(ev => UnityEditor.EditorApplication.isPlaying = false);
         List<VisualElement> elmnts = new List<VisualElement> { b_truck, b_wheel};
         elmnts.ForEach(ve => ve.RegisterCallback<ClickEvent>(ChangeTruckElement));
-        // b_play_game?.RegisterCallback<ClickEvent>(ev => {SceneManager.LoadScene("Nombre Escena");});
+        b_play_game?.RegisterCallback<ClickEvent>(ev => {SceneManager.LoadScene(MTT2Application.Instance.GetNextLevelName());});
         #endregion
         #region Mouse Events
         b_lvl1?.RegisterCallback<MouseEnterEvent>(ev => DisplayLevel(0));
@@ -155,7 +156,12 @@ public class MenuManager : VisualElement
                 }
         }
     }
-    public void EnableCarMenu(){
+    public void EnableCarMenu(ClickEvent clickEvent){
+
+        string veName = (clickEvent.target as VisualElement).name;
+        int lvlIndex = int.Parse(veName.Substring("lvl".Length), CultureInfo.InvariantCulture) - 1;
+        MTT2Application.Instance.SetNextLevel(lvlIndex);
+
         DisableAllScreens();
 
         s_Car.style.display = DisplayStyle.Flex;
