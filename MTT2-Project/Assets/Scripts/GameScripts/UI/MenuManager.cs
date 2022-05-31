@@ -64,20 +64,28 @@ public class MenuManager : VisualElement
         b_lvl2?.RegisterCallback<ClickEvent>(EnableCarMenu);
         b_backLvl?.RegisterCallback<ClickEvent>(ev => EnableHome());
         b_backCar?.RegisterCallback<ClickEvent>(ev => EnableLevelMenu());
-        b_exit?.RegisterCallback<ClickEvent>(ev => UnityEditor.EditorApplication.isPlaying = false);
+        b_exit?.RegisterCallback<ClickEvent>(OnExit);
         List<VisualElement> elmnts = new List<VisualElement> { b_truck, b_wheel};
         elmnts.ForEach(ve => ve.RegisterCallback<ClickEvent>(ChangeTruckElement));
         b_play_game?.RegisterCallback<ClickEvent>(ev => {SceneManager.LoadScene(MTT2Application.Instance.GetNextLevelName());});
-        #endregion
-        #region Mouse Events
+#endregion
+#region Mouse Events
         b_lvl1?.RegisterCallback<MouseEnterEvent>(ev => DisplayLevel(0));
         b_lvl1?.RegisterCallback<MouseLeaveEvent>(evt => DisplayLevel(-1));
         b_lvl2?.RegisterCallback<MouseEnterEvent>(evt => DisplayLevel(1));
         b_lvl2?.RegisterCallback<MouseLeaveEvent>(evt => DisplayLevel(-1));
-        #endregion
+#endregion
 
         s_Main.Q<VisualElement>("Logo")?.RegisterCallback<TransitionEndEvent>(TransitionEndEvent => EnableLevelMenu());
         UnregisterCallback<GeometryChangedEvent>(OnGeometryChange);
+    }
+    private void OnExit(ClickEvent evt)
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
     public void PlayClicked(){
         s_Main.Q<VisualElement>("UI-Container").AddToClassList("offsetRight");
